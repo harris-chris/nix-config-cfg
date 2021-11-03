@@ -16,7 +16,7 @@
             enable = true;
             enableContribAndExtras = true;
          };
-         xkbOptions = "caps:ctrl_modifier";
+         xkbOptions = "caps:nocaps";
       };
    };
 
