@@ -42,7 +42,6 @@ in {
       #Xft.dpi: 60
     #EOF
     #'';
-    xkbOptions = "ctrl:nocaps";
   };
 
   # Binary Cache for Haskell.nix
