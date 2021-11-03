@@ -112,6 +112,7 @@ in {
   environment.systemPackages = with pkgs; [
     wget vim
     firefox
+    openfortivpn
   ];
     
   nixpkgs.config.allowUnfree = true;
