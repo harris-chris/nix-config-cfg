@@ -25,6 +25,7 @@ in {
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.useDHCP = false;
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
@@ -33,16 +34,17 @@ in {
   services.tlp.enable = true;
 
   # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    #displayManager.sessionCommands = ''
-      #${pkgs.xorg.xrdb}/bin/xrdb -merge <<EOF
-      #Xft.dpi: 60
-    #EOF
-    #'';
-  };
+  #services.xserver = {
+    #enable = true;
+    #displayManager.gdm.enable = true;
+    #desktopManager.gnome.enable = true;
+    ##xkbOptions = "ctrl:nocaps";
+    ##displayManager.sessionCommands = ''
+      ##${pkgs.xorg.xrdb}/bin/xrdb -merge <<EOF
+      ##Xft.dpi: 60
+    ##EOF
+    ##'';
+  #};
 
   # Binary Cache for Haskell.nix
   nix.binaryCachePublicKeys = [
