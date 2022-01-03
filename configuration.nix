@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 
-let 
+let
   customFonts = pkgs.nerdfonts.override {
     fonts = [
       "JetBrainsMono"
@@ -53,6 +53,7 @@ in {
   nix.binaryCaches = [
     "https://hydra.iohk.io"
   ];
+  nix.nixPath = [ "nixos-config=/cfg/configuration.nix" ];
 
   # For xilinx vivado
   nix.sandboxPaths = ["/opt"];
@@ -97,7 +98,7 @@ in {
   i18n.inputMethod.fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
 
   virtualisation.docker.enable = true;
-  
+
   programs.fish.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.chris = {
@@ -115,7 +116,7 @@ in {
     firefox
     openfortivpn
   ];
-    
+
   nixpkgs.config.allowUnfree = true;
 
   # List services that you want to enable:
@@ -129,13 +130,7 @@ in {
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "20.09"; # Did you read the comment?
+  system.stateVersion = "20.09";
 
 }
 
