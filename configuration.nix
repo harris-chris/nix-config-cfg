@@ -53,7 +53,10 @@ in {
   nix.binaryCaches = [
     "https://hydra.iohk.io"
   ];
-  nix.nixPath = [ "nixos-config=/cfg/configuration.nix" ];
+  nix.nixPath = [
+    "nixos-config=/cfg/configuration.nix"
+    "nixpkgs=https://github.com/NixOS/nixpkgs/archive/21.05.tar.gz"
+  ];
 
   # For xilinx vivado
   nix.sandboxPaths = ["/opt"];
@@ -107,13 +110,12 @@ in {
       shell = pkgs.fish;
     };
 
-  programs.steam.enable = true;
+  # programs.steam.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget vim
-    firefox
     openfortivpn
   ];
 
