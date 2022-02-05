@@ -60,6 +60,13 @@ in {
 
   # For xilinx vivado
   nix.sandboxPaths = ["/opt"];
+
+  # Enable flakes
+  nix.package = pkgs.nixUnstable;
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
   services.udev.packages = [ udevRules ];
 
   sound.enable = true;
