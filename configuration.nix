@@ -26,6 +26,11 @@ in {
   networking.hostName = "nixos"; # Define your hostname.
   networking.useDHCP = false;
   networking.networkmanager.enable = true;
+  networking.extraHosts = ''
+    172.16.20.10 fastbox1
+    172.16.20.16 achilles
+    172.16.20.17 atlas
+  '';
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
