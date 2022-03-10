@@ -30,6 +30,7 @@ in {
     172.16.20.10 fastbox1
     172.16.20.16 achilles
     172.16.20.17 atlas
+    172.16.20.6 hermes
   '';
 
   # Set your time zone.
