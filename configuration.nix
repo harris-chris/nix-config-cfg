@@ -26,14 +26,16 @@ in {
   networking.hostName = "nixos"; # Define your hostname.
   networking.useDHCP = false;
   networking.networkmanager.enable = true;
+  networking.wireless.userControlled.enable = true;
   networking.extraHosts = ''
-    172.16.20.10 fastbox1
-    172.16.20.16 achilles
     172.16.20.17 atlas
+    172.16.20.16 achilles
+    172.16.20.10 fastbox1
+    172.16.20.9 apollo
+    172.16.20.8 anemoi
     172.16.20.6 hermes
   '';
 
-  # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
   services.power-profiles-daemon.enable = false;
