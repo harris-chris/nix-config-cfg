@@ -118,7 +118,7 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "narHash": "sha256-1A74eKQeTd1LkU0ZksN09Km6kArIYApvw/BdN9e8mvQ=",
+        "narHash": "sha256-h9+QwKjm2LvJ1YLZTGM9pXvF1KG260bFriMnwty4AgM=",
         "path": "kakoune-workspace",
         "type": "path"
       },
@@ -193,11 +193,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1651571855,
-        "narHash": "sha256-KZie6c2J2DUPLjG2PkYSwGLvD6RygA3TxZSPQpctbNI=",
+        "lastModified": 1651848520,
+        "narHash": "sha256-KkJ28fShdd78+zal5HlHsXUICOCtO7Bdvylc5zlp5Mk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fd43ce017d4c95f47166d28664a004f57458a0b1",
+        "rev": "5656d7f92aa8264eb06ba68ad94c87ac5b5312e8",
         "type": "github"
       },
       "original": {
@@ -215,11 +215,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1651637533,
-        "narHash": "sha256-9fuXCpQCmZFSsEW5RaFFsSLDbvGo3PvXQpAD8uz9kf4=",
+        "lastModified": 1651896862,
+        "narHash": "sha256-cGW/svG+tMt7qD7YLw9rHt1cDXPOxJNFKB8CrvgtZaY=",
         "owner": "harris-chris",
         "repo": "flakes",
-        "rev": "236492427ddf09c1da1e44f7e8ac29339c007e18",
+        "rev": "494bedfb31467207cfe9e2b0538be1d66e7faa8e",
         "type": "github"
       },
       "original": {

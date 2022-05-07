@@ -19,7 +19,6 @@ let
     gcc
     gnumake
     jq
-    julia-stable-bin
     haskell-language-server
     kakoune-workspace
     killall
@@ -74,7 +73,8 @@ let
 
   importedPrograms = import ./programs;
   importedServices = import ./services;
-  imports = importedPrograms ++ importedServices;
+  importedXdg = import ./xdg;
+  imports = importedPrograms ++ importedServices ++ importedXdg;
 
 in {
   programs.home-manager.enable = true;
