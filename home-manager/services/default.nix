@@ -1,0 +1,4 @@
+[
+  ./gpg-agent
+  # ./xcape
+]

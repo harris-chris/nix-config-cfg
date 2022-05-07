@@ -1,0 +1,56 @@
+[
+  {
+    "name": "bluetooth on",
+    "command": "bluetoothctl power on && bluetoothctl scan on"
+  },
+  {
+    "name": "bluetooth off",
+    "command": "bluetoothctl power off"
+  },
+  {
+    "name": "home",
+    "command": "sh $HOME/.screenlayout/home.sh"
+  },
+  {
+    "name": "laptop",
+    "command": "sh $HOME/.screenlayout/laptop.sh"
+  },
+  {
+    "name": "lock",
+    "command": "multilockscreen -l dim"
+  },
+  {
+    "name": "maim copy",
+    "command": "maim -s | xclip -selection clipboard -t image/png"
+  },
+  {
+    "name": "maim save",
+    "command": "maim -s ~/Downloads/screengrab_$(date +%s).png"
+  },
+  {
+    "name": "nnn",
+    "command": "alacritty -e nnn -c"
+  },
+  {
+    "name": "power off",
+    "confirm": true,
+    "command": "systemctl poweroff"
+  },
+  {
+    "name": "raptor vpn on",
+    "command": "alacritty -e gksudo openfortivpn 129.227.183.244:10443 -u charris -p B9dcyn0ZfGJU --trusted-cert 4c303ff8ed7a08f7f7a7b61e98cc8f69962cf8e4b1d15e207b50d6a8dd11280d"
+  },
+  {
+    "name": "reboot",
+    "confirm": true,
+    "command": "systemctl reboot"
+  },
+  {
+    "name": "suspend",
+    "command": "systemctl suspend"
+  },
+  {
+    "name": "vol",
+    "command": "alacritty -e ncpamixer"
+  }
+]
