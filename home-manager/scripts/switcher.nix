@@ -12,7 +12,7 @@ in
     if [[ $monitors == *"eDP"* ]]; then
       echo "Switching to HM config for eDP laptop display"
       cd ${cfg}
-      nix build --impure .#homeConfigurations.chris.activationPackage
+      nix build --impure .#homeConfigurations.chris-edp.activationPackage
       result/activate
       cd -
     else

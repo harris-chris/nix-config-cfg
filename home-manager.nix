@@ -13,15 +13,19 @@ let
     overlays = [ personal-overlay ];
   };
 
+  mkHome = conf: (
+    home-manager.lib.homeManagerConfiguration rec {
+      inherit pkgs system username homeDirectory;
+
+      stateVersion = "21.05";
+      configuration = conf;
+    });
+
+  edpConf = import ./home-manager/display/edp.nix {
+    inherit pkgs;
+    inherit (pkgs) config lib stdenv;
+  };
 in
 {
-  chris = home-manager.lib.homeManagerConfiguration rec {
-    inherit pkgs system username homeDirectory;
-
-    stateVersion = "21.05";
-    configuration = import ./home-manager/home.nix {
-      inherit pkgs;
-      inherit (pkgs) config lib stdenv;
-    };
-  };
+  chris-edp = mkHome edpConf;
 }
