@@ -118,7 +118,7 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "narHash": "sha256-h9+QwKjm2LvJ1YLZTGM9pXvF1KG260bFriMnwty4AgM=",
+        "narHash": "sha256-14jhFHN9I/SOR9u4KOcTkj3uiSQXtvMFgHr//So6etk=",
         "path": "kakoune-workspace",
         "type": "path"
       },
@@ -215,11 +215,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1651896862,
-        "narHash": "sha256-cGW/svG+tMt7qD7YLw9rHt1cDXPOxJNFKB8CrvgtZaY=",
+        "lastModified": 1651897228,
+        "narHash": "sha256-AfXgNOaRkiVogAcD3o3y1cbB5LrcuWllBdziH82u+Bo=",
         "owner": "harris-chris",
         "repo": "flakes",
-        "rev": "494bedfb31467207cfe9e2b0538be1d66e7faa8e",
+        "rev": "779200fd7963490e3e89c00b977e81e650b2410c",
         "type": "github"
       },
       "original": {
