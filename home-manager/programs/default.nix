@@ -1,5 +1,6 @@
 [
    ./alacritty
+   ./broot
    ./chromium
    ./fish
    ./git

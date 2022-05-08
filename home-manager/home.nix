@@ -10,7 +10,6 @@ let
     arandr
     awscli2
     bolt
-    broot
     docker
     docker-compose
     diff-so-fancy
@@ -26,6 +25,7 @@ let
     lsof
     maim
     multilockscreen
+    nano
     ncpamixer
     niv
     nix-index
