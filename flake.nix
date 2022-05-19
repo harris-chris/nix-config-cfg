@@ -7,7 +7,7 @@
       url = "github:nix-community/home-manager?rev=454abeb5a891b2b56f10a30f2a846e8341cbfe9b";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    personal-pkgs.url = "github:harris-chris/flakes";
+    personal-pkgs.url = "github:harris-chris/personal-packages";
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, personal-pkgs }:
