@@ -13,7 +13,7 @@ let
 in {
   imports =
     [ # Include the results of the hardware scan.
-      ./wm/xmonad.nix
+      # ./wm/xmonad.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -89,7 +89,7 @@ in {
   fonts.fonts = with pkgs; [
     customFonts
     dejavu_fonts
-    font-awesome-ttf
+    font-awesome
     myfonts.icomoon-feather
     ipafont
     kochi-substitute
@@ -115,6 +115,13 @@ in {
 
   virtualisation.docker.enable = true;
 
+  # programs.sway = {
+  #   enable = true;
+  #   # wrapperFeatures.gtk = true;
+  #   extraPackages = with pkgs; [
+  #     foot # Alacritty is the default terminal in the config
+  #   ];
+  # };
   programs.fish.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.chris = {
@@ -127,6 +134,8 @@ in {
     wget vim
     openfortivpn
     nixops
+    kakoune
+    git
   ];
 
   nixpkgs.config.allowUnfree = true;

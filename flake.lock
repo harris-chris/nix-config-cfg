@@ -105,17 +105,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1646616315,
-        "narHash": "sha256-A1g4AjM/4kVWBzfCx9HqCszVFlcsk+C9NHG3X6hRjaI=",
+        "lastModified": 1652996682,
+        "narHash": "sha256-7ZWyd5W2tM/uxXGn16AJUXenlGPUt/r6zitEcorz5j0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "454abeb5a891b2b56f10a30f2a846e8341cbfe9b",
+        "rev": "02b15de8ad714409358cffdc6ed518ade03402c4",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "454abeb5a891b2b56f10a30f2a846e8341cbfe9b",
         "type": "github"
       }
     },
@@ -139,18 +138,34 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1653065754,
+        "narHash": "sha256-qZPWVTl/JSIivgPQCbRwD0hSLLp4Y7uIUQ59ucSoRQM=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "be2b338c6a05b9e46a811119e3c5bca98a118467",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1645296114,
-        "narHash": "sha256-y53N7TyIkXsjMpOG7RhvqJFGDacLs9HlyHeSTBioqYU=",
+        "lastModified": 1652885393,
+        "narHash": "sha256-YIgvvlk4iQ1Hi7KD9o5gsojc+ApB+jiH1d5stK8uXiw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "530a53dcbc9437363471167a5e4762c5fcfa34a1",
+        "rev": "48037fd90426e44e4bf03e6479e88a11453b9b66",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-21.05",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -243,6 +258,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "personal-pkgs": "personal-pkgs"
       }

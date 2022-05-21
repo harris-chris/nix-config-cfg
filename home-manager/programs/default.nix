@@ -9,5 +9,5 @@
    ./qutebrowser
    ./rofi
    ./rofi-pass
-   ./xmonad
+   # ./xmonad
 ]

@@ -18,7 +18,6 @@ let
     gcc
     gnumake
     jq
-    haskell-language-server
     kakoune-workspace
     killall
     libnotify
@@ -38,7 +37,7 @@ let
     popupcommands_confirm
     ripgrep
     rnix-lsp
-    signal-desktop
+    # signal-desktop
     spotify
     steamcmd
     surf
@@ -48,6 +47,11 @@ let
     xclip
   ];
 
+  swayPackages = with pkgs; [
+    foot
+    wl-clipboard
+  ];
+
   lsps = with pkgs; [
     ccls
     #hls
@@ -55,26 +59,26 @@ let
     rust-analyzer
   ];
 
-  polybarPkgs = with pkgs; [
-    font-awesome      # awesome fonts
-    material-design-icons # fonts with glyphs
-  ];
+  # polybarPkgs = with pkgs; [
+  #   font-awesome      # awesome fonts
+  #   material-design-icons # fonts with glyphs
+  # ];
 
   scripts = pkgs.callPackage ./scripts/default.nix { inherit config pkgs; };
 
-  xmonadPkgs = with pkgs; [
-    nitrogen
-    xcape
-    xorg.xev
-    xorg.xkbcomp
-    xorg.xmodmap
-    xorg.xrandr
-  ];
+  # xmonadPkgs = with pkgs; [
+  #   nitrogen
+  #   xcape
+  #   xorg.xev
+  #   xorg.xkbcomp
+  #   xorg.xmodmap
+  #   xorg.xrandr
+  # ];
 
   importedPrograms = import ./programs;
   importedServices = import ./services;
-  importedXdg = import ./xdg;
-  imports = importedPrograms ++ importedServices ++ importedXdg;
+  # importedXdg = import ./xdg;
+  imports = importedPrograms ++ importedServices;
 
 in {
   programs.home-manager.enable = true;
@@ -86,38 +90,43 @@ in {
     };
   };
 
-  services.dunst = {
+  wayland.windowManager.sway = {
     enable = true;
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.gnome3.adwaita-icon-theme;
-      size = "16x16";
-    };
-    settings = {
-      global = {
-        monitor = 0;
-        geometry = "600x50-50+65";
-        shrink = "yes";
-        transparency = 10;
-        padding = 16;
-        horizontal_padding = 16;
-        font = "JetBrainsMono Nerd Font 8";
-        line_height = 4;
-        format = ''<b>%s</b>\n%b'';
-      };
-    };
+    wrapperFeatures.gtk = true ;
   };
+
+  # services.dunst = {
+  #   enable = true;
+  #   iconTheme = {
+  #     name = "Adwaita";
+  #     package = pkgs.gnome3.adwaita-icon-theme;
+  #     size = "16x16";
+  #   };
+  #   settings = {
+  #     global = {
+  #       monitor = 0;
+  #       geometry = "600x50-50+65";
+  #       shrink = "yes";
+  #       transparency = 10;
+  #       padding = 16;
+  #       horizontal_padding = 16;
+  #       font = "JetBrainsMono Nerd Font 8";
+  #       line_height = 4;
+  #       format = ''<b>%s</b>\n%b'';
+  #     };
+  #   };
+  # };
 
   home = {
     username = "chris";
     homeDirectory = "/home/chris";
-    packages = defaultPkgs ++ lsps ++ polybarPkgs ++ scripts ++ xmonadPkgs; # ++ personalPkgs;
+    packages = defaultPkgs ++ lsps ++ scripts ++ swayPackages; # ++ personalPkgs;
     stateVersion = "21.05";
 
     sessionVariables = {
-      DISPLAY = ":0";
+      # DISPLAY = ":0";
       EDITOR = "kk";
-      JULIA_DEPOT_PATH = "/home/chris/.julia";
+      # JULIA_DEPOT_PATH = "/home/chris/.julia";
     };
     keyboard = null;
   };
@@ -125,12 +134,12 @@ in {
   programs = {
     bat.enable = true;
     gpg.enable = true;
-    password-store.enable = true;
-    password-store.package = pkgs.pass;
-    password-store.settings = {
-      PASSWORD_STORE_DIR = "/data/gpg";
-      PASSWORD_STORE_KEY = "chrisharriscjh@gmail.com";
-    };
+    # password-store.enable = true;
+    # password-store.package = pkgs.pass;
+    # password-store.settings = {
+    #   PASSWORD_STORE_DIR = "/data/gpg";
+    #   PASSWORD_STORE_KEY = "chrisharriscjh@gmail.com";
+    # };
 
     # direnv = {
     #   enable = true;
