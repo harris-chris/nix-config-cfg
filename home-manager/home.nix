@@ -36,19 +36,13 @@ let
     popupcommands_confirm
     ripgrep
     rnix-lsp
-    # signal-desktop
+    signal-desktop
     spotify
-    steamcmd
     surf
     tree
     which
     wmctrl
     xclip
-  ];
-
-  swayPackages = with pkgs; [
-    foot
-    wl-clipboard
   ];
 
   lsps = with pkgs; [
@@ -76,8 +70,8 @@ let
 
   importedPrograms = import ./programs;
   importedServices = import ./services;
-  # importedXdg = import ./xdg;
-  imports = importedPrograms ++ importedServices;
+  importedXdg = import ./xdg;
+  imports = importedPrograms ++ importedServices ++ importedXdg;
 
 in {
   programs.home-manager.enable = true;
@@ -114,7 +108,7 @@ in {
   home = {
     username = "chris";
     homeDirectory = "/home/chris";
-    packages = defaultPkgs ++ lsps ++ scripts ++ swayPackages; # ++ personalPkgs;
+    packages = defaultPkgs ++ lsps ++ scripts; # ++ personalPkgs;
     stateVersion = "21.05";
 
     sessionVariables = {

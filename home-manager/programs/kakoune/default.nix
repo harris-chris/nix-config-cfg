@@ -41,20 +41,18 @@ let
     }
   '';
 
-
-
 in rec {
   home = rec {
     packages = with pkgs; [
       xsel ripgrep kak-lsp
       rnix-lsp rust-analyzer
-      skim
+      skim foot
       # haskellPackages.Cabal_3_4_0_0
       # cabal-install ghc8107
     ];
 
     sessionVariables = {
-      EDITOR = "kak";
+      EDITOR = "kk";
     };
 
     file."kak-lsp.toml" = {

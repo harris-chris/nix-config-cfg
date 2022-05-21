@@ -1,9 +1,12 @@
 { pkgs, lib, ...}:
 
-let
-  focusedBorder = "fc0313";
-in
 {
+  home.packages = with pkgs; [
+    foot
+    fuzzel
+    mako
+    wl-clipboard
+  ];
   wayland.windowManager.sway = rec {
     enable = true;
     wrapperFeatures.gtk = true ;

@@ -39,19 +39,6 @@ in {
   services.power-profiles-daemon.enable = false;
   services.tlp.enable = true;
 
-  # Enable the X11 windowing system.
-  #services.xserver = {
-    #enable = true;
-    #displayManager.gdm.enable = true;
-    #desktopManager.gnome.enable = true;
-    ##xkbOptions = "ctrl:nocaps";
-    ##displayManager.sessionCommands = ''
-      ##${pkgs.xorg.xrdb}/bin/xrdb -merge <<EOF
-      ##Xft.dpi: 60
-    ##EOF
-    ##'';
-  #};
-
   # Binary Cache for Haskell.nix
   nix.binaryCachePublicKeys = [
     "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
@@ -82,9 +69,6 @@ in {
     enable = true;
     extraPackages = [ pkgs.vaapiIntel ];
   };
-  #environment.variables = {
-    #MESA_GL_VERSION_OVERRIDE = "2.1";
-  #};
 
   fonts.fonts = with pkgs; [
     customFonts
@@ -115,20 +99,13 @@ in {
 
   virtualisation.docker.enable = true;
 
-  # programs.sway = {
-  #   enable = true;
-  #   # wrapperFeatures.gtk = true;
-  #   extraPackages = with pkgs; [
-  #     foot # Alacritty is the default terminal in the config
-  #   ];
-  # };
   programs.fish.enable = true;
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.chris = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
-      shell = pkgs.fish;
-    };
+
+  users.users.chris = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "docker" "plugdev" "netdev" ];
+    shell = pkgs.fish;
+  };
 
   environment.systemPackages = with pkgs; [
     wget vim

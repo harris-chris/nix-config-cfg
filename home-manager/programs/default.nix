@@ -7,7 +7,6 @@
    ./kakoune
    ./mercurial
    ./qutebrowser
-   ./rofi
-   ./rofi-pass
    ./sway
+   ./udiskie
 ]
