@@ -3,7 +3,6 @@
 let
   popupcommands = pkgs.callPackage ./scripts/popupcommands.nix { inherit config pkgs; };
   popupcommands_confirm = pkgs.callPackage ./scripts/popupcommands_confirm.nix { inherit config pkgs; };
-  unzip_sjis = pkgs.callPackage ./scripts/unzip_sjis.nix { inherit config pkgs; };
 
   defaultPkgs = with pkgs; [
     any-nix-shell
