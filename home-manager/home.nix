@@ -89,11 +89,6 @@ in {
     };
   };
 
-  wayland.windowManager.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true ;
-  };
-
   # services.dunst = {
   #   enable = true;
   #   iconTheme = {
