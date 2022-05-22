@@ -1,6 +1,7 @@
 { pkgs, lib, ...}:
 
 {
+  programs.mako = import ./mako.nix;
   home.packages = with pkgs; [
     foot
     fuzzel

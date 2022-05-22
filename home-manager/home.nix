@@ -122,18 +122,6 @@ in {
   programs = {
     bat.enable = true;
     gpg.enable = true;
-    # password-store.enable = true;
-    # password-store.package = pkgs.pass;
-    # password-store.settings = {
-    #   PASSWORD_STORE_DIR = "/data/gpg";
-    #   PASSWORD_STORE_KEY = "chrisharriscjh@gmail.com";
-    # };
-
-    # direnv = {
-    #   enable = true;
-    #   enableFishIntegration = true;
-    #   nix-direnv.enable = true;
-    # };
 
     fzf = {
       enable = true;

@@ -6,6 +6,7 @@
    ./git
    ./kakoune
    ./mercurial
+   ./pass
    ./qutebrowser
    ./sway
    ./udiskie
