@@ -36,8 +36,12 @@ in {
 
   time.timeZone = "Asia/Tokyo";
 
-  services.power-profiles-daemon.enable = false;
-  services.tlp.enable = true;
+  services = {
+    power-profiles-daemon.enable = false;
+    tlp.enable = true;
+    blueman.enable = true;
+    udev.packages = [ udevRules ];
+  };
 
   # Binary Cache for Haskell.nix
   nix.binaryCachePublicKeys = [
@@ -60,14 +64,14 @@ in {
     experimental-features = nix-command flakes
   '';
 
-  services.udev.packages = [ udevRules ];
-
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
-  hardware.opengl = {
-    enable = true;
-    extraPackages = [ pkgs.vaapiIntel ];
+  hardware = {
+    bluetooth.enable = true;
+    opengl = {
+      enable = true;
+      extraPackages = [ pkgs.vaapiIntel ];
+    };
+    pulseaudio.enable = true;
   };
 
   fonts.fonts = with pkgs; [
@@ -116,8 +120,6 @@ in {
   ];
 
   nixpkgs.config.allowUnfree = true;
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

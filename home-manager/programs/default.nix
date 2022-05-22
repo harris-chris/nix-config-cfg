@@ -9,4 +9,5 @@
    ./qutebrowser
    ./sway
    ./udiskie
+   ./i3status-rust
 ]

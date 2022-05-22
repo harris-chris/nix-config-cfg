@@ -37,10 +37,20 @@
           "${modifier}+${ws6}" = "workspace number 6";
           "${modifier}+Shift+${ws6}" = "move container to workspace number 6";
         };
+
+        bars = [
+          (import ./swaybar.nix { inherit pkgs; })
+        ];
     };
     # extraConfig = ''
     #   # Property Name         Border  BG      Text    Indicator Child Border
     #   client.focused          $base0A $base0A $base00 $base0A   $base01
     # '';
+  };
+  services.swayidle = {
+    enable = true;
+    timeouts = [
+      { timeout = 60*15; command = "systemctl suspend"; }
+    ];
   };
 }
