@@ -27,10 +27,9 @@ let
     function save_history --on-event fish_postexec
         history --save
     end
-    function save_history --on-event fish_preexec
+    function merge_history --on-event fish_preexec
         history --merge
     end
-    history --merge
     bind \ce edit_command_buffer
     bind -e --preset \cd delete-or-exit
     set fish_greeting
