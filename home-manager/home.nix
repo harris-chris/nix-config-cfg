@@ -39,6 +39,7 @@ let
     signal-desktop
     spotify
     surf
+    sway-contrib.grimshot
     tree
     which
     wmctrl

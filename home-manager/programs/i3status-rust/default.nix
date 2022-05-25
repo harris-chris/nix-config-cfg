@@ -10,8 +10,8 @@
              block = "disk_space";
              path = "/";
              alias = "/";
-             info_type = "available";
-             format = "{percentage} : {available} / {total}";
+             info_type = "used";
+             format = "{percentage} : {used} / {total}";
              unit = "GB";
              interval = 60;
              warning = 30.0;
@@ -33,7 +33,7 @@
            }
            {
              block = "net";
-             format = "{ssid} {speed_up} {speed_down}";
+             format = "{speed_down} {speed_up}";
            }
            {
              block = "external_ip";
