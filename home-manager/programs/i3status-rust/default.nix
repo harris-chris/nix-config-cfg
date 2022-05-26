@@ -10,12 +10,13 @@
              block = "disk_space";
              path = "/";
              alias = "/";
-             info_type = "used";
-             format = "{percentage} : {used} / {total}";
+             info_type = "available";
+             format = "{used} / {total}";
+             alert_absolute = true;
              unit = "GB";
+             warning = 80.0;
+             alert = 40.0;
              interval = 60;
-             warning = 30.0;
-             alert = 10.0;
            }
            {
              block = "memory";

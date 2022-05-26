@@ -22,6 +22,7 @@ let
   '';
 
   basicExtraConfig = ''
+    set-option global termcmd 'foot -e sh -c'
     decl str grepcmd 'rg --column'
     # Highlight search matches in italic
     add-highlighter global/ dynregex '%reg{/}' 0:+i

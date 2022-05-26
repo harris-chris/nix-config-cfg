@@ -15,6 +15,7 @@ let
     exa
     fd
     gcc
+    git-crypt
     gnumake
     jq
     kakoune-workspace

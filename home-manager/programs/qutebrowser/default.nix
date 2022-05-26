@@ -17,16 +17,18 @@ in {
       };
     };
     quickmarks = {
+      amazon = "https://www.amazon.co.jp/-/en/";
       aws = "https://signin.aws.amazon.com";
       ft = "https://www.ft.com";
       gh = "https://github.com";
       gmail = "https://mail.google.com/mail/u/1/#inbox";
       hn = "https://news.ycombinator.com";
+      office = "https://www.office.com/?auth=2";
       raphg = "https://hg.lan.raptortt.com";
       so = "https://www.stackoverflow.com";
       trans = "https://translate.google.com";
       whatsap = "https://web.whatsapp.com";
-      office = "https://www.office.com/?auth=2";
+      youtube = "https://www.youtube.com/";
     };
     searchEngines = {
       DEFAULT = "https://www.google.com/search?hl=en&q={}";
