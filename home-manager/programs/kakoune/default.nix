@@ -22,7 +22,6 @@ let
   '';
 
   basicExtraConfig = ''
-    set-option global termcmd 'foot -e sh -c'
     decl str grepcmd 'rg --column'
     # Highlight search matches in italic
     add-highlighter global/ dynregex '%reg{/}' 0:+i
@@ -35,10 +34,13 @@ let
       set-option global lsp_server_configuration rust.clippy_preference="on"
       lsp-auto-hover-enable
     }
+    hook global ModuleLoaded fzf-file %{
+      set-option global fzf_file_command 'fd'
+    }
     hook global ModuleLoaded fzf %{
-      # set global fzf_implementation sk
-      set-option global fzf_file_command 'rg'
       set-option global fzf_highlight_command 'bat'
+      set-option global termcmd 'foot -e sh -c'
+      set-option global fzf_implementation 'sk'
     }
   '';
 
