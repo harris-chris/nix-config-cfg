@@ -3,6 +3,7 @@
    ./broot
    ./chromium
    ./fish
+   ./foot
    ./git
    ./kakoune
    ./mercurial

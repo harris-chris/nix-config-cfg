@@ -49,7 +49,7 @@ in rec {
     packages = with pkgs; [
       xsel ripgrep kak-lsp
       rnix-lsp rust-analyzer
-      skim foot
+      skim
       # haskellPackages.Cabal_3_4_0_0
       # cabal-install ghc8107
     ];
