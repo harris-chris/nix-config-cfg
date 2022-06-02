@@ -51,7 +51,7 @@
            {
              block = "time";
              interval = 60;
-             format = "%a %Y-%d-%m %R";
+             format = "%a %Y-%m-%d %R";
            }
 
         ];

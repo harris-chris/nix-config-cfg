@@ -43,10 +43,11 @@
           (import ./swaybar.nix { inherit pkgs; })
         ];
     };
-    # extraConfig = ''
-    #   # Property Name         Border  BG      Text    Indicator Child Border
-    #   client.focused          $base0A $base0A $base00 $base0A   $base01
-    # '';
+    extraConfig = ''
+        input type:touchpad {
+          tap enabled
+        }
+    '';
   };
   services.swayidle = {
     enable = true;
