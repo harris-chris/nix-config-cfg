@@ -27,7 +27,7 @@ in {
       raphg = "https://hg.lan.raptortt.com";
       so = "https://www.stackoverflow.com";
       trans = "https://translate.google.com";
-      whatsap = "https://web.whatsapp.com";
+      whatsapp = "https://web.whatsapp.com";
       youtube = "https://www.youtube.com/";
     };
     searchEngines = {
