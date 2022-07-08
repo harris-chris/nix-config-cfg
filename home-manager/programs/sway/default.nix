@@ -52,7 +52,7 @@
   services.swayidle = {
     enable = true;
     timeouts = [
-      { timeout = 60*15; command = "systemctl suspend"; }
+      { timeout = 60*30; command = "systemctl suspend"; }
     ];
   };
 }

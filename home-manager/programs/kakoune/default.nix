@@ -49,7 +49,7 @@ in rec {
     packages = with pkgs; [
       xsel ripgrep kak-lsp
       rnix-lsp rust-analyzer
-      skim
+      skim dhall-lsp-server
       # haskellPackages.Cabal_3_4_0_0
       # cabal-install ghc8107
     ];
@@ -84,6 +84,10 @@ in rec {
       	roots = ["Setup.hs", "stack.yaml", "*.cabal"]
       	command = "haskell-language-server"
       	args = ["--lsp"]
+        [language.dhall]
+        filetypes = ["dhall"]
+        roots = []
+        command = "dhall-lsp-server"
       '';
     };
   };

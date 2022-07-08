@@ -42,6 +42,7 @@ let
     surf
     sway-contrib.grimshot
     tree
+    usbutils
     which
     wmctrl
     xclip
