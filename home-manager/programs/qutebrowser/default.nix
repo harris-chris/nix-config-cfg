@@ -26,6 +26,8 @@ in {
       office = "https://www.office.com/?auth=2";
       raphg = "https://hg.lan.raptortt.com";
       so = "https://www.stackoverflow.com";
+      redmine-internal = "https://redmine.lan.raptortt.com/";
+      redmine-external = "https://redmine.trade-raptor.com/";
       trans = "https://translate.google.com";
       whatsapp = "https://web.whatsapp.com";
       youtube = "https://www.youtube.com/";

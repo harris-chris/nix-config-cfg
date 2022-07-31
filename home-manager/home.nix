@@ -6,7 +6,6 @@ let
 
   defaultPkgs = with pkgs; [
     any-nix-shell
-    arandr
     awscli2
     bolt
     docker
@@ -15,18 +14,13 @@ let
     exa
     fd
     gcc
+    gdu
     git-crypt
-    gnumake
     jq
     kakoune-workspace
-    killall
     libnotify
     lsof
-    maim
-    multilockscreen
-    nano
     ncpamixer
-    niv
     nix-index
     nix-prefetch-scripts
     nmap
@@ -39,37 +33,20 @@ let
     rnix-lsp
     signal-desktop
     spotify
-    surf
     sway-contrib.grimshot
     tree
     usbutils
     which
-    wmctrl
-    xclip
   ];
 
   lsps = with pkgs; [
-    ccls
+    # ccls
     #hls
     #metals
-    rust-analyzer
+    # rust-analyzer
   ];
 
-  # polybarPkgs = with pkgs; [
-  #   font-awesome      # awesome fonts
-  #   material-design-icons # fonts with glyphs
-  # ];
-
   scripts = pkgs.callPackage ./scripts/default.nix { inherit config pkgs; };
-
-  # xmonadPkgs = with pkgs; [
-  #   nitrogen
-  #   xcape
-  #   xorg.xev
-  #   xorg.xkbcomp
-  #   xorg.xmodmap
-  #   xorg.xrandr
-  # ];
 
   importedPrograms = import ./programs;
   importedServices = import ./services;
@@ -85,28 +62,6 @@ in {
       fish-foreign-env = pkgs.fishPlugins.foreign-env;
     };
   };
-
-  # services.dunst = {
-  #   enable = true;
-  #   iconTheme = {
-  #     name = "Adwaita";
-  #     package = pkgs.gnome3.adwaita-icon-theme;
-  #     size = "16x16";
-  #   };
-  #   settings = {
-  #     global = {
-  #       monitor = 0;
-  #       geometry = "600x50-50+65";
-  #       shrink = "yes";
-  #       transparency = 10;
-  #       padding = 16;
-  #       horizontal_padding = 16;
-  #       font = "JetBrainsMono Nerd Font 8";
-  #       line_height = 4;
-  #       format = ''<b>%s</b>\n%b'';
-  #     };
-  #   };
-  # };
 
   home = {
     username = "chris";
