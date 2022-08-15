@@ -31,6 +31,8 @@ in {
       trans = "https://translate.google.com";
       whatsapp = "https://web.whatsapp.com";
       youtube = "https://www.youtube.com/";
+      kp-ouch-set-protocol-spec = "https://redmine.lan.raptortt.com/issues/6135";
+      kp-ouch-set-risk-filter = "https://redmine.lan.raptortt.com/issues/6031";
     };
     searchEngines = {
       DEFAULT = "https://www.google.com/search?hl=en&q={}";
