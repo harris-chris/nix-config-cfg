@@ -24,6 +24,7 @@
           ws6 = "grave";
         in lib.mkOptionDefault {
           "${modifier}+space" = lib.mkForce "exec ${config.terminal}";
+          "${modifier}+d" = "exec bemenu-run";
           "${modifier}+v" = "kill";
           "${modifier}+${ws1}" = "workspace number 1";
           "${modifier}+Shift+${ws1}" = "move container to workspace number 1";

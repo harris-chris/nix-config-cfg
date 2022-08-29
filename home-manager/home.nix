@@ -7,6 +7,7 @@ let
   defaultPkgs = with pkgs; [
     any-nix-shell
     awscli2
+    bemenu
     bolt
     docker
     docker-compose
@@ -29,6 +30,7 @@ let
     p7zip
     popupcommands
     popupcommands_confirm
+    prettyping
     ripgrep
     rnix-lsp
     signal-desktop
