@@ -110,7 +110,7 @@ in rec {
 
         ui = {
           setTitle = true;
-          assistant = "cat";
+          assistant = "none";
           enableMouse = false;
         };
 
