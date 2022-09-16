@@ -34,7 +34,7 @@
            }
            {
              block = "net";
-             format = "{speed_down} {speed_up}";
+             format = "{speed_down;K} {speed_up;K}";
            }
            {
              block = "external_ip";
