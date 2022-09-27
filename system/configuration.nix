@@ -32,6 +32,7 @@ in {
     172.16.20.9 apollo
     172.16.20.8 anemoi
     172.16.20.6 hermes
+    172.16.20.13 rocketman
   '';
 
   time.timeZone = "Asia/Tokyo";
