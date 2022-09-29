@@ -19,6 +19,7 @@ in {
     quickmarks = {
       amazon = "https://www.amazon.co.jp/-/en/";
       aws = "https://signin.aws.amazon.com";
+      dhall-prelude = "https://store.dhall-lang.org/Prelude-v21.1.0/index.html";
       ft = "https://www.ft.com";
       gh = "https://github.com";
       gmail = "https://mail.google.com/mail/u/1/#inbox";
