@@ -5,6 +5,7 @@ let
   popupcommands_confirm = pkgs.callPackage ./scripts/popupcommands_confirm.nix { inherit config pkgs; };
 
   defaultPkgs = with pkgs; [
+    atop
     any-nix-shell
     awscli2
     bemenu
@@ -90,7 +91,7 @@ in {
 
     htop = {
       enable = true;
-      settings.sort_key = "PERCENT_CPU";
+      settings.sort_key = "PERCENT_MEM";
     };
 
     ssh.enable = true;
