@@ -4,8 +4,7 @@
   programs.broot = {
     enable = true;
     verbs = [
-      { invocation = "kk"; execution = "kk {file}"; }
-      { invocation = "kak"; execution = "kak {file}"; }
+      { invocation = "touch {new_file}"; external = "touch {directory}/{new_file}"; leave_broot=false; }
     ];
   };
 }
