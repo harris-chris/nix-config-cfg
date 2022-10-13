@@ -3,7 +3,7 @@
 let
   gitConfig = {
     core = {
-      editor = "v";
+      editor = "kak";
       pager  = "diff-so-fancy | less --tabs=4 -RFX";
     };
     init.defaultBranch = "main";

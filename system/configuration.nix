@@ -108,7 +108,7 @@ in {
 
   users.users.chris = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "plugdev" "netdev" ];
+    extraGroups = [ "wheel" "docker" "plugdev" "netdev" "network" "wireshark" ];
     shell = pkgs.fish;
   };
 

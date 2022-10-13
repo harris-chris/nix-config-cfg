@@ -26,14 +26,15 @@ in {
       hn = "https://news.ycombinator.com";
       office = "https://www.office.com/?auth=2";
       raphg = "https://hg.lan.raptortt.com";
-      so = "https://www.stackoverflow.com";
       redmine-internal = "https://redmine.lan.raptortt.com/";
       redmine-external = "https://redmine.trade-raptor.com/";
+      so = "https://www.stackoverflow.com";
       trans = "https://translate.google.com";
       whatsapp = "https://web.whatsapp.com";
       youtube = "https://www.youtube.com/";
       kp-ouch-set-protocol-spec = "https://redmine.lan.raptortt.com/issues/6135";
       kp-ouch-set-risk-filter = "https://redmine.lan.raptortt.com/issues/6031";
+      fix_5_sp2 = "https://www.onixs.biz/fix-dictionary/5.0.sp2/index.html";
     };
     searchEngines = {
       DEFAULT = "https://www.google.com/search?hl=en&q={}";

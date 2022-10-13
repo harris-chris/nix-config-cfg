@@ -120,6 +120,12 @@ in rec {
           highlightCursor = true;
         };
 
+        autoReload = "yes";
+
+        scrollOff = {
+          lines = 3;
+        };
+
         keyMappings = [
           {
             mode = "normal";
