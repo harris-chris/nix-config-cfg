@@ -106,10 +106,32 @@ in {
 
   programs.fish.enable = true;
 
-  users.users.chris = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "plugdev" "netdev" "network" "wireshark" ];
-    shell = pkgs.fish;
+  security.wrappers = {
+    termshark = {
+      source = "${pkgs.termshark}/bin/termshark";
+      capabilities = "cap_net_raw,cap_net_admin+eip";
+      permissions = "u+rx,g+x";
+      owner = "root";
+      group = "wireshark";
+    };
+    dumpcap = {
+      source = "${pkgs.wireshark-cli}/bin/dumpcap";
+      capabilities = "cap_net_raw,cap_net_admin+eip";
+      permissions = "u+rx,g+x";
+      owner = "root";
+      group = "wireshark";
+    };
+  };
+
+  users = {
+    groups.wireshark = {};
+    users = {
+      chris = {
+        isNormalUser = true;
+        extraGroups = [ "wheel" "docker" "plugdev" "netdev" "networkmanager" "wireshark" ];
+        shell = pkgs.fish;
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -118,6 +140,8 @@ in {
     nixops
     kakoune
     git
+    wireshark-cli
+    termshark
   ];
 
   nixpkgs.config.allowUnfree = true;
