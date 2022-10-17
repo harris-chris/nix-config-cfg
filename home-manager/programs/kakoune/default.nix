@@ -19,6 +19,7 @@ let
           set-option global indentwidth 4
       }
     }
+    require-module smarttab
   '';
 
   basicExtraConfig = ''
@@ -182,7 +183,7 @@ in rec {
           }
         ];
       };
-    extraConfig = basicExtraConfig + kakoune-expand + tab-options + smarttab + ayu-mirage;
+    extraConfig = basicExtraConfig + kakoune-expand + smarttab + ayu-mirage + tab-options ;
     };
   };
 }
