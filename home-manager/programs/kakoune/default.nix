@@ -18,6 +18,10 @@ let
           expandtab
           set-option global indentwidth 4
       }
+      hook global WinSetOption filetype=dhall %{
+          expandtab
+          set-option global indentwidth 4
+      }
     }
     require-module smarttab
   '';
