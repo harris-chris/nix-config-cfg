@@ -14,6 +14,7 @@ in {
         "b" = "back";
         "h" = "tab-prev";
         "l" = "tab-next";
+        "<Alt-n>" = "search-prev";
       };
     };
     quickmarks = {
