@@ -22,6 +22,10 @@ let
           expandtab
           set-option global indentwidth 4
       }
+      hook global WinSetOption filetype=nix %{
+          expandtab
+          set-option global indentwidth 2
+      }
     }
     require-module smarttab
   '';
