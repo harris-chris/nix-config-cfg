@@ -40,6 +40,7 @@ let
     tree
     usbutils
     which
+    xdg-utils
   ];
 
   lsps = with pkgs; [

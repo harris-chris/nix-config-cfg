@@ -4,7 +4,15 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/plain" = [ "org.qutebrowser.qutebrowser.desktop" "kakoune.desktop" "nvim.desktop" "vim.desktop" ];
+      "text/plain" = [
+        "kakoune.desktop"
+      ];
+      "text/html" = [
+        "org.qutebrowser.qutebrowser.desktop"
+      ];
+      "application/pdf" = [
+        "org.qutebrowser.qutebrowser.desktop"
+      ];
     };
   };
   xdg.desktopEntries = {
