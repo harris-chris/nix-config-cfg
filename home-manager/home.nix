@@ -1,8 +1,12 @@
 { pkgs, config, ... }:
 
 let
-  popupcommands = pkgs.callPackage ./scripts/popupcommands.nix { inherit config pkgs; };
-  popupcommands_confirm = pkgs.callPackage ./scripts/popupcommands_confirm.nix { inherit config pkgs; };
+  popupcommands = pkgs.callPackage ./scripts/popupcommands.nix {
+    inherit config pkgs;
+  };
+  popupcommands_confirm = pkgs.callPackage ./scripts/popupcommands_confirm.nix {
+    inherit config pkgs;
+  };
 
   defaultPkgs = with pkgs; [
     atop

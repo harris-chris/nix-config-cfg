@@ -6,23 +6,27 @@ let
   tab-options = ''
     hook global ModuleLoaded smarttab %{
       set-option global softtabstop 2
-      # hook global WinSetOption expandtab
-      hook global WinSetOption filetype=makefile %{
+      hook global WinSetOption expandtab
+      hook global BufSetOption filetype=makefile %{
           noexpandtab
       }
-      hook global WinSetOption filetype=haskell %{
+      hook global BufSetOption filetype=haskell %{
           expandtab
           set-option global indentwidth 4
       }
-      hook global WinSetOption filetype=python %{
+      hook global BufSetOption filetype=python %{
           expandtab
           set-option global indentwidth 4
       }
-      hook global WinSetOption filetype=dhall %{
+      hook global BufSetOption filetype=dhall %{
           expandtab
           set-option global indentwidth 4
       }
-      hook global WinSetOption filetype=nix %{
+      hook global BufSetOption filetype=nix %{
+          expandtab
+          set-option global indentwidth 2
+      }
+      hook global BufSetOption filetype=julia %{
           expandtab
           set-option global indentwidth 2
       }
