@@ -64,7 +64,7 @@ in rec {
       rnix-lsp rust-analyzer
       skim dhall-lsp-server
       haskell-language-server
-      haskell.compiler.ghc902
+      # haskell.compiler.ghc943
       # haskellPackages.Cabal_3_4_0_0
       # cabal-install ghc8107
     ];
