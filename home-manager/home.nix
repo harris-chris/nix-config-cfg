@@ -40,6 +40,7 @@ let
     rnix-lsp
     signal-desktop
     spotify
+    swappy
     sway-contrib.grimshot
     tree
     usbutils

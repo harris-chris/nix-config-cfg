@@ -12,9 +12,7 @@ let
 
 in {
   imports =
-    [ # Include the results of the hardware scan.
-      # ./wm/xmonad.nix
-    ];
+    [];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -31,8 +29,10 @@ in {
     172.16.20.10 fastbox1
     172.16.20.9 apollo
     172.16.20.8 anemoi
+    172.16.20.7 fastbox2
     172.16.20.6 hermes
     172.16.20.13 rocketman
+    172.16.20.59 buildserver
   '';
 
   time.timeZone = "Asia/Tokyo";
@@ -42,7 +42,11 @@ in {
     tlp.enable = true;
     blueman.enable = true;
     udev.packages = [ udevRules ];
+    dbus.enable = true;
+    pipewire.enable = true;
   };
+
+  xdg.portal.wlr.enable = true;
 
   # Binary Cache for Haskell.nix
   nix.binaryCachePublicKeys = [
@@ -55,15 +59,25 @@ in {
     "nixos-config=/cfg/configuration.nix"
     "nixpkgs=https://github.com/NixOS/nixpkgs/archive/21.05.tar.gz"
   ];
-
   # For xilinx vivado
   nix.sandboxPaths = ["/opt"];
-
-  # Enable flakes
   nix.package = pkgs.nixUnstable;
+  nix.trustedUsers = [ "root" "chris" ];
   nix.extraOptions = ''
     experimental-features = nix-command flakes
+    builders-use-substitutes = true
+    cores = 8
   '';
+  nix.systemFeatures = [ "raptor" ];
+  nix.buildMachines = [ {
+    hostName = "builder@10.21.5.30";
+    system = "x86_64-linux";
+    maxJobs = 4;
+    speedFactor = 2;
+    supportedFeatures = [ ];
+    mandatoryFeatures = [ "raptor" ];
+  }] ;
+  nix.distributedBuilds = true;
 
   sound.enable = true;
   hardware = {
@@ -121,6 +135,13 @@ in {
       owner = "root";
       group = "wireshark";
     };
+    tcpdump = {
+      source = "${pkgs.tcpdump}/bin/tcpdump";
+      capabilities = "cap_net_raw,cap_net_admin+eip";
+      permissions = "u+rx,g+x";
+      owner = "root";
+      group = "wireshark";
+    };
   };
 
   users = {
@@ -134,15 +155,20 @@ in {
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    wget vim
-    openfortivpn
-    nixops
-    kakoune
-    git
-    wireshark-cli
-    termshark
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      wget vim
+      openfortivpn
+      nixops
+      kakoune
+      git
+      wireshark-cli
+      termshark
+    ];
+    variables = {
+      XDG_CURRENT_DESKTOP = "sway";
+    };
+  };
 
   nixpkgs.config.allowUnfree = true;
 
