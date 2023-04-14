@@ -11,8 +11,6 @@ let
     font4 = 5;
   };
 
-  myspotify = import ../programs/spotify/default.nix { opts = ""; inherit pkgs; };
-
   statusBar = import ../services/polybar/default.nix {
     inherit config pkgs;
     mainBar = laptopBar;

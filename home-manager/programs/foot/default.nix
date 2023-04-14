@@ -8,10 +8,13 @@
           font = "JetBrainsMono Nerd Font:size=7";
           dpi-aware = "auto";
       };
-      key-bindings = {
-        scrollback-up-half-page = "Alt+u";
-        scrollback-down-half-page = "Alt+d";
+      colors = {
+          background = 040404;
       };
+      # key-bindings = {
+      #   scrollback-up-half-page = "Alt+u";
+      #   scrollback-down-half-page = "Alt+d";
+      # };
     };
   };
 }

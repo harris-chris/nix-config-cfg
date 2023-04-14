@@ -9,40 +9,41 @@
           {
              block = "disk_space";
              path = "/";
-             alias = "/";
              info_type = "available";
-             format = "{used} / {total}";
-             alert_absolute = true;
-             unit = "GB";
+             format = "$used / $total";
+             alert_unit = "GB";
              warning = 80.0;
              alert = 40.0;
              interval = 60;
            }
            {
              block = "memory";
-             display_type = "memory";
-             format_mem = "{mem_used_percents}";
-             format_swap = "{swap_used_percents}";
+             format = "$icon $mem_used / $mem_total";
+             warning_mem = 80.0;
+             critical_mem = 95.0;
            }
            {
              block = "cpu";
              interval = 1;
+             format = "$icon $barchart $utilization";
            }
            {
              block = "docker";
-             format = "{running} /{total} ";
+             format = "$icon $running / $total";
            }
            {
              block = "net";
-             format = "{speed_down;K} {speed_up;K}";
+             format = "$icon ^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K) ";
            }
            {
              block = "external_ip";
-             format = "{ip} {country_code_iso3}";
+             format = "$ip $country_code_iso3";
            }
            {
              block = "battery";
-             format = "{percentage}  {time}  {power}";
+             format = "$icon $percentage $time $power";
+             warning = 50.0;
+             critical = 15.0;
            }
            {
              block = "bluetooth";
@@ -51,7 +52,7 @@
            {
              block = "time";
              interval = 60;
-             format = "%a %Y-%m-%d %R";
+             format = "$icon $timestamp.datetime()";
            }
 
         ];

@@ -1,10 +1,12 @@
 { system, nixpkgs, home-manager, personal-pkgs }:
 
 let
+
+  personal-overlay = personal-pkgs.overlays.${system};
+
   username = "chris";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
-  personal-overlay = personal-pkgs.overlays.${system};
 
   pkgs = import nixpkgs {
     inherit system;
@@ -13,19 +15,24 @@ let
     overlays = [ personal-overlay ];
   };
 
-  mkHome = conf: (
-    home-manager.lib.homeManagerConfiguration rec {
-      inherit pkgs system username homeDirectory;
-
+  home = rec {
       stateVersion = "21.05";
-      configuration = conf;
-    });
+      inherit username homeDirectory;
+    };
 
-  edpConf = import ./home-manager/display/edp.nix {
-    inherit pkgs;
-    inherit (pkgs) config lib stdenv;
-  };
+
+  # edpConf = import ./home-manager/display/edp.nix {
+  #   inherit pkgs;
+  #   inherit (pkgs) config lib stdenv;
+  # };
 in
 {
-  chris-edp = mkHome edpConf;
+  edpHome = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+        ./home-manager/home.nix
+        { inherit home; }
+        (import ./home-manager/programs/alacritty/default.nix { fontSize = 8; inherit pkgs; })
+      ];
+    };
 }
