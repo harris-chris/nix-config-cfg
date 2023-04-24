@@ -5,6 +5,7 @@
    ./fish
    ./foot
    ./git
+   ./helix
    ./kakoune
    ./mercurial
    ./pass

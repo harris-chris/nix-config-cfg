@@ -19,6 +19,7 @@ let
     diff-so-fancy
     exa
     fd
+    firefox
     gcc
     gdu
     git-crypt

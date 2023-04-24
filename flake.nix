@@ -8,7 +8,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = github:NixOS/nixos-hardware/master;
-    personal-pkgs.url = "github:harris-chris/personal-packages";
+    personal-pkgs = {
+      url = "github:harris-chris/personal-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {

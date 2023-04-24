@@ -44,12 +44,14 @@ in {
       hoogle = "https://hoogle.haskell.org/?hoogle={}&scope=set%3Astackage";
     };
     extraConfig = ''
+      c.zoom.default = 150
       c.fonts.default_size = '11pt'
       c.fileselect.handler = 'external'
       c.fileselect.single_file.command = ["foot", "-e", "nnn", "-p", "{}"]
       c.fileselect.multiple_files.command = ["foot", "-e", "nnn", "-p", "{}"]
       c.fileselect.folder.command = ["foot", "-e", "nnn", "-p", "{}"]
       config.load_autoconfig(False)
+      c.content.javascript.can_access_clipboard = 'true'
     '';
   };
 }

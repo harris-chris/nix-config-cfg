@@ -11,8 +11,7 @@ let
   udevRules = pkgs.callPackage ./udev/default.nix { inherit pkgs; };
 
 in {
-  imports =
-    [];
+  imports = [];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -48,27 +47,25 @@ in {
 
   xdg.portal.wlr.enable = true;
 
-  # Binary Cache for Haskell.nix
-  nix.binaryCachePublicKeys = [
-    "cache.iog.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
-  ];
-  nix.binaryCaches = [
-    "https://cache.iog.io"
-  ];
   nix.nixPath = [
     "nixos-config=/cfg/configuration.nix"
     "nixpkgs=https://github.com/NixOS/nixpkgs/archive/21.05.tar.gz"
   ];
-  # For xilinx vivado
-  nix.sandboxPaths = ["/opt"];
   nix.package = pkgs.nixUnstable;
-  nix.trustedUsers = [ "root" "chris" ];
+  nix.settings = {
+    trusted-users = [ "root" "chris" ];
+    system-features = [ "raptor" ];
+    # For xilinx vivado
+    extra-sandbox-paths = [ "/opt" ];
+    # Binary Cache for Haskell.nix
+    substituters = [ "https://cache.iog.io" ];
+    trusted-public-keys = [ "cache.iog.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
+  };
   nix.extraOptions = ''
     experimental-features = nix-command flakes
     builders-use-substitutes = true
     cores = 8
   '';
-  nix.systemFeatures = [ "raptor" ];
   nix.buildMachines = [ {
     hostName = "builder@10.21.5.30";
     system = "x86_64-linux";
@@ -113,12 +110,15 @@ in {
     ];
   };
 
-  i18n.inputMethod.enabled = "fcitx";
-  i18n.inputMethod.fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
+  # i18n.inputMethod.enabled = "fcitx";
+  # i18n.inputMethod.fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
 
   virtualisation.docker.enable = true;
 
-  programs.fish.enable = true;
+  programs = {
+    fish.enable = true;
+    steam.enable = true;
+  };
 
   security.wrappers = {
     termshark = {
@@ -159,7 +159,6 @@ in {
     systemPackages = with pkgs; [
       wget vim
       openfortivpn
-      nixops
       kakoune
       git
       wireshark-cli
@@ -170,8 +169,9 @@ in {
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
-
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 

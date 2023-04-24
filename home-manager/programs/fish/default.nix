@@ -9,8 +9,7 @@ let
   themeConfig = ''
     set -g theme_display_date no
     set -g theme_nerd_fonts yes
-    set -g theme_display_git_master_branch no
-    set -g theme_nerd_fonts yes
+    set -g theme_git_default_branches master main
     set -g theme_newline_cursor yes
     set -g theme_color_scheme solarized
   '';
@@ -34,11 +33,24 @@ let
     bind -e --preset \cd delete-or-exit
     set fish_greeting
   '' + fzfConfig + themeConfig;
+
+  oh-my-fish = {
+    name = "fasd";
+    src = pkgs.fetchFromGitHub {
+      owner = "oh-my-fish";
+      repo = "plugin-fasd";
+      rev = "38a5b6b6011106092009549e52249c6d6f501fba";
+      sha256 = "06v37hqy5yrv5a6ssd1p3cjd9y3hnp19d3ab7dag56fs1qmgyhbs";
+    };
+  };
 in
 {
+  home = rec {
+    packages = with pkgs; [ fasd ];
+  };
   programs.fish = {
     enable = true;
-    plugins = [ customPlugins.theme fenv ];
+    plugins = [ customPlugins.theme fenv oh-my-fish ];
     interactiveShellInit = ''
       # eval (direnv hook fish)
       any-nix-shell fish --info-right | source
@@ -80,5 +92,10 @@ in
   };
 
   xdg.configFile."fish/functions/fish_prompt.fish".text = customPlugins.prompt;
+  xdg.configFile."fish/conf.d/plugin-bobthefish.fish".text = pkgs.lib.mkAfter ''
+    for f in $plugin_dir/*.fish
+      source $f
+    end
+    '';
 }
 
