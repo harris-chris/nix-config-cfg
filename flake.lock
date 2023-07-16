@@ -229,11 +229,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1668498996,
-        "narHash": "sha256-8rXkv0vbu5VP6O5LSonOvSvhqVg13MCeG1lvCnyXnJI=",
+        "lastModified": 1686793534,
+        "narHash": "sha256-8TODkfHUlu4wh9rnMdmVq4ajAXfFZx6NztnCwdWxIDo=",
         "owner": "harris-chris",
         "repo": "personal-packages",
-        "rev": "6b0a7bc81b604398a095647d7cdc6be1e1393c63",
+        "rev": "25c612d550207f175e87e12d1be95d6e3b2c8fee",
         "type": "github"
       },
       "original": {

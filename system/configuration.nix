@@ -23,15 +23,17 @@ in {
   networking.networkmanager.enable = true;
   networking.wireless.userControlled.enable = true;
   networking.extraHosts = ''
-    172.16.20.17 atlas
     172.16.20.16 achilles
-    172.16.20.10 fastbox1
-    172.16.20.9 apollo
     172.16.20.8 anemoi
+    172.16.20.9 apollo
+    172.16.20.17 atlas
+    172.16.20.59 buildserver
+    172.16.20.10 fastbox1
     172.16.20.7 fastbox2
     172.16.20.6 hermes
     172.16.20.13 rocketman
-    172.16.20.59 buildserver
+    172.16.20.11 turbobox
+    10.21.5.30 nixbuildserver
   '';
 
   time.timeZone = "Asia/Tokyo";
@@ -40,7 +42,7 @@ in {
     power-profiles-daemon.enable = false;
     tlp.enable = true;
     blueman.enable = true;
-    udev.packages = [ udevRules ];
+    # udev.packages = [ udevRules ];
     dbus.enable = true;
     pipewire.enable = true;
   };

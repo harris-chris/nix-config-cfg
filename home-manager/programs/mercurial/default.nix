@@ -17,6 +17,8 @@
         # "raptor.password" = "";
       };
       extensions = {
+        "strip" = "";
+        "rebase" = "";
         # "guestrepo" = "";
       };
     };
