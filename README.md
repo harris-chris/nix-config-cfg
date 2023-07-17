@@ -3,6 +3,6 @@ nixos-rebuild switch --use-remote-sudo .#lemur
 nixos-rebuild --use-remote-sudo switch --flake .#lemur
 
 To rebuild home-manager:
-nix build .#homeConfigurations.chris-edp.activationPackage
+nix build .#homeConfigurations.chris.activationPackage
 ./result/activate
 swaymsg reload

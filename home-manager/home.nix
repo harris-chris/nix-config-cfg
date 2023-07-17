@@ -1,12 +1,6 @@
 { pkgs, config, ... }:
 
 let
-  popupcommands = pkgs.callPackage ./scripts/popupcommands.nix {
-    inherit config pkgs;
-  };
-  popupcommands_confirm = pkgs.callPackage ./scripts/popupcommands_confirm.nix {
-    inherit config pkgs;
-  };
 
   defaultPkgs = with pkgs; [
     atop
@@ -15,12 +9,10 @@ let
     bemenu
     bolt
     docker
-    docker-compose
     diff-so-fancy
     exa
     fd
     firefox
-    gcc
     gdu
     git-crypt
     jq
@@ -34,8 +26,6 @@ let
     nnn
     pass
     p7zip
-    popupcommands
-    popupcommands_confirm
     prettyping
     ripgrep
     rnix-lsp
@@ -56,14 +46,13 @@ let
     # rust-analyzer
   ];
 
-  scripts = pkgs.callPackage ./scripts/default.nix { inherit config pkgs; };
-
   importedPrograms = import ./programs;
   importedServices = import ./services;
   importedXdg = import ./xdg;
   imports = importedPrograms ++ importedServices ++ importedXdg;
 
 in {
+  inherit imports;
   programs.home-manager.enable = true;
 
   nixpkgs.config = {
@@ -76,7 +65,7 @@ in {
   home = {
     username = "chris";
     homeDirectory = "/home/chris";
-    packages = defaultPkgs ++ lsps ++ scripts; # ++ personalPkgs;
+    packages = defaultPkgs ++ lsps; # ++ personalPkgs;
     stateVersion = "21.05";
 
     sessionVariables = {
@@ -104,5 +93,4 @@ in {
     ssh.enable = true;
   };
 
-  imports = imports;
 }

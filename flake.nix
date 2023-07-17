@@ -8,29 +8,40 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = github:NixOS/nixos-hardware/master;
-    personal-pkgs = {
-      url = "github:harris-chris/personal-packages";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    agenix.url = "github:ryantm/agenix";
+    get-workspace-name.url = github:harris-chris/get-workspace-name;
+    kakoune-workspace.url = github:harris-chris/kakoune-workspace;
   };
 
   outputs = inputs @ {
     self
     , nixpkgs
     , home-manager
-    , personal-pkgs
     , nixos-hardware
+    , agenix
+    , get-workspace-name
+    , kakoune-workspace
   }:
-    let
-      system = "x86_64-linux";
-    in
+  let
+    system = "x86_64-linux";
+    homeConfigurations = {
+      chris = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            get-workspace-name.overlays.default
+            kakoune-workspace.overlays.default
+          ];
+          config.allowUnfree = true;
+        };
+        modules = [
+          ./home-manager/home.nix
+        ];
+      };
+    };
+  in
     {
-      homeConfigurations = (
-        import ./home-manager.nix {
-          inherit system nixpkgs home-manager personal-pkgs;
-        }
-      );
-
+      inherit homeConfigurations;
       nixosConfigurations = (
         import ./system.nix {
           inherit (nixpkgs) lib;
