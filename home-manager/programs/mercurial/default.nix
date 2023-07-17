@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  raptor_ldap_password = pkgs.lib.strings.removeSuffix "\n"
-    (builtins.readFile ./raptor_ldap_password.secret);
+  raptor_ldap_password = pkgs.readSecret "dummy_password" ./raptor_ldap_password.secret;
 in
 {
   programs.mercurial = {

@@ -30,6 +30,7 @@
           overlays = [
             get-workspace-name.overlays.default
             kakoune-workspace.overlays.default
+            (import ./lib/default.nix).overlay
           ];
           config.allowUnfree = true;
         };
