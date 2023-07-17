@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+  raptor_ldap_password = pkgs.lib.strings.removeSuffix "\n"
+    (builtins.readFile ./raptor_ldap_password.secret);
+in
 {
   programs.mercurial = {
     enable = true;
@@ -13,7 +17,7 @@
         "raptor.username" = "charris";
         "raptor.schemes" = "http https";
         "raptor.prefix" = "https://hg.lan.raptortt.com/";
-        "raptor.password" = "dqpBit40vhtidXa";
+        "raptor.password" = raptor_ldap_password;
         # "raptor.password" = "";
       };
       extensions = {

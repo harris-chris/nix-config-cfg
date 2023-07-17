@@ -8,7 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = github:NixOS/nixos-hardware/master;
-    agenix.url = "github:ryantm/agenix";
     get-workspace-name.url = github:harris-chris/get-workspace-name;
     kakoune-workspace.url = github:harris-chris/kakoune-workspace;
   };
@@ -18,12 +17,12 @@
     , nixpkgs
     , home-manager
     , nixos-hardware
-    , agenix
     , get-workspace-name
     , kakoune-workspace
   }:
   let
     system = "x86_64-linux";
+
     homeConfigurations = {
       chris = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
