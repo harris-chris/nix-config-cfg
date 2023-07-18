@@ -43,17 +43,24 @@ let
 
     eval %sh{kak-lsp --kakoune -s $kak_session}
     lsp-enable
+
     hook global WinSetOption filetype=rust %{
       set-option global lsp_server_configuration rust.clippy_preference="on"
       lsp-auto-hover-enable
     }
+
     hook global ModuleLoaded fzf-file %{
       set-option global fzf_file_command 'fd'
     }
+
     hook global ModuleLoaded fzf %{
       set-option global fzf_highlight_command 'bat'
       set-option global termcmd 'foot -e sh -c'
       set-option global fzf_implementation 'sk'
+    }
+
+    hook global BufCreate .+\.fountain %{
+        set-option buffer filetype fountain
     }
   '';
 
@@ -64,6 +71,7 @@ in rec {
       rnix-lsp rust-analyzer
       skim
       haskell-language-server
+      nls
       # dhall-lsp-server
       # haskell.compiler.ghc943
       # haskellPackages.Cabal_3_4_0_0
@@ -100,6 +108,11 @@ in rec {
       	roots = ["Setup.hs", "stack.yaml", "*.cabal"]
       	command = "haskell-language-server"
       	args = ["--lsp"]
+       	[language.nickel]
+      	filetypes = ["nickel"]
+        roots = []
+      	command = "nls"
+
         # [language.dhall]
         # filetypes = ["dhall"]
         # roots = []

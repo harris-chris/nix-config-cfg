@@ -17,12 +17,10 @@ in
         "raptor.schemes" = "http https";
         "raptor.prefix" = "https://hg.lan.raptortt.com/";
         "raptor.password" = raptor_ldap_password;
-        # "raptor.password" = "";
       };
       extensions = {
         "strip" = "";
         "rebase" = "";
-        # "guestrepo" = "";
       };
     };
   };

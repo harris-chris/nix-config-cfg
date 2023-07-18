@@ -8,8 +8,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = github:NixOS/nixos-hardware/master;
-    get-workspace-name.url = github:harris-chris/get-workspace-name;
-    kakoune-workspace.url = github:harris-chris/kakoune-workspace;
+    personal_pkgs.url = "github:harris-chris/personal-packages";
+    get_workspace_name.url = github:harris-chris/get-workspace-name;
+    kakoune_workspace.url = github:harris-chris/kakoune-workspace;
   };
 
   outputs = inputs @ {
@@ -17,8 +18,9 @@
     , nixpkgs
     , home-manager
     , nixos-hardware
-    , get-workspace-name
-    , kakoune-workspace
+    , personal_pkgs
+    , get_workspace_name
+    , kakoune_workspace
   }:
   let
     system = "x86_64-linux";
@@ -28,8 +30,9 @@
         pkgs = import nixpkgs {
           inherit system;
           overlays = [
-            get-workspace-name.overlays.default
-            kakoune-workspace.overlays.default
+            personal_pkgs.overlays.default
+            get_workspace_name.overlays.default
+            kakoune_workspace.overlays.default
             (import ./lib/default.nix).overlay
           ];
           config.allowUnfree = true;
