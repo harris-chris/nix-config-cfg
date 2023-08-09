@@ -1,8 +1,9 @@
-let
+{ config, pkgs, lib, ... }:
 
-in {
+{
   programs.qutebrowser = {
     enable = true;
+    package = pkgs.qutebrowser-qt6;
     keyBindings = {
       normal = {
         "<Ctrl-h>" = "tab-prev";
@@ -51,7 +52,7 @@ in {
       c.fileselect.multiple_files.command = ["foot", "-e", "nnn", "-p", "{}"]
       c.fileselect.folder.command = ["foot", "-e", "nnn", "-p", "{}"]
       config.load_autoconfig(False)
-      c.content.javascript.can_access_clipboard = 'true'
+      c.content.javascript.clipboard = "access"
     '';
   };
 }
