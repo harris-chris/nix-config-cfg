@@ -24,6 +24,7 @@ in {
   networking.wireless.userControlled.enable = true;
   networking.extraHosts = ''
     172.16.20.16 achilles
+    10.21.5.30 aether
     172.16.20.8 anemoi
     172.16.20.9 apollo
     172.16.20.17 atlas
@@ -34,6 +35,7 @@ in {
     172.16.20.13 rocketman
     172.16.20.11 turbobox
     10.21.5.30 nixbuildserver
+    172.16.20.58 hg.lan.raptortt.com
   '';
 
   time.timeZone = "Asia/Tokyo";
