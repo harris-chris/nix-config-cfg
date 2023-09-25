@@ -34,6 +34,7 @@ in {
     172.16.20.6 hermes
     172.16.20.13 rocketman
     172.16.20.11 turbobox
+    10.21.5.20 metis
     10.21.5.30 nixbuildserver
     172.16.20.58 hg.lan.raptortt.com
   '';
@@ -63,7 +64,7 @@ in {
     extra-sandbox-paths = [ "/opt" ];
     # Binary Cache for Haskell.nix
     substituters = [ "https://cache.iog.io" ];
-    trusted-public-keys = [ "cache.iog.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
+    trusted-public-keys = [ "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" ];
   };
   nix.extraOptions = ''
     experimental-features = nix-command flakes
