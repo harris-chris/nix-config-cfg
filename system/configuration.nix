@@ -70,6 +70,7 @@ in {
     experimental-features = nix-command flakes
     builders-use-substitutes = true
     cores = 8
+    allow-import-from-derivation = true
   '';
   nix.buildMachines = [ {
     hostName = "builder@10.21.5.30";
