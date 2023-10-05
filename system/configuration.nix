@@ -59,7 +59,7 @@ in {
   nix.package = pkgs.nixUnstable;
   nix.settings = {
     trusted-users = [ "root" "chris" ];
-    system-features = [ "raptor" ];
+    system-features = [ "raptor" "big-parallel" ];
     # For xilinx vivado
     extra-sandbox-paths = [ "/opt" ];
     # Binary Cache for Haskell.nix
