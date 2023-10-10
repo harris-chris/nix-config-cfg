@@ -36,6 +36,7 @@ in {
     172.16.20.11 turbobox
     10.21.5.20 metis
     10.21.5.30 nixbuildserver
+    172.16.20.58 git.lan.raptortt.com
     172.16.20.58 hg.lan.raptortt.com
   '';
 
