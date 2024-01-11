@@ -3,7 +3,7 @@
 {
   programs.qutebrowser = {
     enable = true;
-    package = pkgs.qutebrowser-qt6;
+    package = pkgs.qutebrowser;
     keyBindings = {
       normal = {
         "<Ctrl-h>" = "tab-prev";

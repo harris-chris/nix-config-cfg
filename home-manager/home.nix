@@ -10,7 +10,7 @@ let
     bolt
     docker
     diff-so-fancy
-    exa
+    eza
     fd
     firefox
     gdu

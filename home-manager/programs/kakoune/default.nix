@@ -30,6 +30,10 @@ let
           expandtab
           set-option global indentwidth 4
       }
+      hook global WinSetOption filetype=rust %{
+          expandtab
+          set-option global indentwidth 4
+      }
     }
     require-module smarttab
   '';

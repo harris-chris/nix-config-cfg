@@ -57,7 +57,7 @@ in
     '';
     shellAliases = {
       cat  = "bat";
-      ls   = "exa --color=always";
+      ls   = "eza --color=always";
       ll   = "ls -a";
       ".." = "cd ..";
       ping = "prettyping";

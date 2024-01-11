@@ -22,6 +22,9 @@ in
         "strip" = "";
         "rebase" = "";
       };
+      format = {
+        "use-persistent-nodemap" = "no";
+      };
     };
   };
 }
