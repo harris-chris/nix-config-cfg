@@ -30,6 +30,7 @@ let
     ripgrep
     rnix-lsp
     signal-desktop
+    sioyek
     spotify
     swappy
     sway-contrib.grimshot
@@ -39,12 +40,6 @@ let
     xdg-utils
   ];
 
-  lsps = with pkgs; [
-    # ccls
-    #hls
-    #metals
-    # rust-analyzer
-  ];
 
   importedPrograms = import ./programs;
   importedServices = import ./services;
@@ -65,13 +60,11 @@ in {
   home = {
     username = "chris";
     homeDirectory = "/home/chris";
-    packages = defaultPkgs ++ lsps; # ++ personalPkgs;
+    packages = defaultPkgs;
     stateVersion = "21.05";
 
     sessionVariables = {
-      # DISPLAY = ":0";
       EDITOR = "kk";
-      # JULIA_DEPOT_PATH = "/home/chris/.julia";
     };
     keyboard = null;
   };

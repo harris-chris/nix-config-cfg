@@ -46,7 +46,7 @@ in {
     power-profiles-daemon.enable = false;
     tlp.enable = true;
     blueman.enable = true;
-    # udev.packages = [ udevRules ];
+    udev.packages = [ pkgs.via ];
     dbus.enable = true;
     pipewire.enable = true;
   };
@@ -55,7 +55,7 @@ in {
 
   nix.nixPath = [
     "nixos-config=/cfg/configuration.nix"
-    "nixpkgs=https://github.com/NixOS/nixpkgs/archive/21.05.tar.gz"
+    "nixpkgs=https://github.com/NixOS/nixpkgs/archive/23.11.tar.gz"
   ];
   nix.package = pkgs.nixUnstable;
   nix.settings = {
@@ -86,6 +86,7 @@ in {
   sound.enable = true;
   hardware = {
     bluetooth.enable = true;
+    keyboard.qmk.enable = true;
     opengl = {
       enable = true;
       extraPackages = [ pkgs.vaapiIntel ];
@@ -164,12 +165,14 @@ in {
 
   environment = {
     systemPackages = with pkgs; [
-      wget vim
+      git
       openfortivpn
       kakoune
-      git
-      wireshark-cli
       termshark
+      via
+      wget
+      wireshark-cli
+      vim
     ];
     variables = {
       XDG_CURRENT_DESKTOP = "sway";

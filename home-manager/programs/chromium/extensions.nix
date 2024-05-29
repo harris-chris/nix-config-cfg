@@ -1,3 +1,4 @@
 {
   line = "ophjlpahpchlmihnnnihgmmeilfjmjjc";
+  translate = "aapbdbdomjkkjkaonfhkkikfgjllcleb";
 }
