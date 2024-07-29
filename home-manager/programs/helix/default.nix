@@ -11,6 +11,7 @@ in
       theme = "dracula_at_night";
       keys.normal = {
         space.o = "jumplist_picker";
+        space.u = "hover";
         space.h = "jump_view_left";
         space.j = "jump_view_down";
         space.k = "jump_view_up";
