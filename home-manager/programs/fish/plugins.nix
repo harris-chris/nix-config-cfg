@@ -7,7 +7,7 @@ let
       owner  = "oh-my-fish";
       repo   = "theme-bobthefish";
       rev    = "76cac812064fa749ffc258a20398c6f6250860c5";
-      sha256 = "1nvazfyz7vk37nska7yw94kknv8jbsqwzz3ybwbnhsnf98xlir0r";
+      sha256 = "sha256-7nZ25R75WsSPqSmyeJbRQ49cITxL3D5CfyplsixFlY8=";
     };
   };
 in

@@ -1,4 +1,0 @@
-{
-  line = "ophjlpahpchlmihnnnihgmmeilfjmjjc";
-  translate = "aapbdbdomjkkjkaonfhkkikfgjllcleb";
-}

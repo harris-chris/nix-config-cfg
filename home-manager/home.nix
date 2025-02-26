@@ -16,7 +16,6 @@ let
     gdu
     git-crypt
     jq
-    kakoune-workspace
     libnotify
     lsof
     ncpamixer
@@ -28,8 +27,6 @@ let
     p7zip
     prettyping
     ripgrep
-    rnix-lsp
-    signal-desktop
     sioyek
     spotify
     swappy

@@ -1,16 +1,8 @@
 [
-   ./alacritty
    ./broot
-   ./chromium
    ./fish
    ./foot
    ./git
    ./helix
-   ./kakoune
    ./mercurial
-   ./pass
-   ./qutebrowser
-   ./sway
-   ./udiskie
-   ./i3status-rust
 ]
