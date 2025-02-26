@@ -44,12 +44,13 @@ in {
   time.timeZone = "Asia/Tokyo";
 
   services = {
-    power-profiles-daemon.enable = false;
-    tlp.enable = true;
     blueman.enable = true;
-    udev.packages = [ pkgs.via ];
     dbus.enable = true;
     pipewire.enable = true;
+    power-profiles-daemon.enable = false;
+    tailscale.enable = true;
+    tlp.enable = true;
+    udev.packages = [ pkgs.via ];
   };
 
   xdg.portal.wlr.enable = true;

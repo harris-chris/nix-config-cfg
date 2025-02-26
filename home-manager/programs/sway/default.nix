@@ -26,6 +26,7 @@
           "${modifier}+space" = lib.mkForce "exec ${config.terminal}";
           "${modifier}+d" = "exec bemenu-run";
           "${modifier}+v" = "kill";
+          "${modifier}+x" = "kill";
           "${modifier}+${ws1}" = "workspace number 1";
           "${modifier}+Shift+${ws1}" = "move container to workspace number 1";
           "${modifier}+${ws2}" = "workspace number 2";
