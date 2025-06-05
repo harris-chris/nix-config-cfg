@@ -64,7 +64,7 @@ in {
     stateVersion = "21.05";
 
     sessionVariables = {
-      EDITOR = "kk";
+      EDITOR = "hx";
     };
     keyboard = null;
   };
@@ -90,6 +90,12 @@ in {
           port = 222;
           user = "charris";
           identityFile = "~/.ssh/raptor_git";
+        };
+        "github-raptor" = {
+          user = "git";
+          hostname = "github.com";
+          identityFile = "~/.ssh/raptor_github";
+          identitiesOnly = true;
         };
       };
     };

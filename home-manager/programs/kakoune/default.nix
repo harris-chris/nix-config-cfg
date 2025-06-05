@@ -82,10 +82,6 @@ in rec {
       # cabal-install ghc8107
     ];
 
-    sessionVariables = {
-      EDITOR = "kk";
-    };
-
     file."kak-lsp.toml" = {
       target = ".config/kak-lsp/kak-lsp.toml";
       text = ''
