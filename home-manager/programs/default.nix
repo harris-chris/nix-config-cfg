@@ -6,7 +6,6 @@
    ./foot
    ./git
    ./helix
-   ./kakoune
    ./mercurial
    ./pass
    ./qutebrowser

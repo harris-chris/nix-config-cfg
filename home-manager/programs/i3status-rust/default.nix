@@ -41,7 +41,7 @@
            }
            {
              block = "battery";
-             format = "$icon  $percentage $time $power  ";
+             format = "$icon  $percentage $power  ";
              warning = 50.0;
              critical = 15.0;
            }

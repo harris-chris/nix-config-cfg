@@ -28,7 +28,6 @@ let
     p7zip
     prettyping
     ripgrep
-    rnix-lsp
     signal-desktop
     sioyek
     spotify

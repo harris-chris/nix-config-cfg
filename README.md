@@ -1,4 +1,5 @@
 **To rebuild**
+IF YOU HAVE DONE A VERSION CHANGE THEN REMEMBER TO REBUILD HOME-MANAGER AFTERWARDS; IT IS NOT AUTOMATIC
 nixos-rebuild switch --use-remote-sudo .#lemur
 nixos-rebuild --use-remote-sudo switch --flake .#lemur
 

@@ -7,7 +7,7 @@
   workspaceNumbers = true;
   statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs $HOME/.config/i3status-rust/config-default.toml";
   fonts = {
-    names = [ "JetBrainsMono" ];
+    names = [ "VictorMono" ];
     size = 11.0;
   };
   trayOutput = "primary";

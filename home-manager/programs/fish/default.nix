@@ -30,7 +30,8 @@ let
         history --merge
     end
     bind \ce edit_command_buffer
-    bind -e --preset \cd delete-or-exit
+    bind --preset --erase \cd
+    bind \cd delete-char
     set fish_greeting
   '' + fzfConfig + themeConfig;
 

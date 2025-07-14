@@ -14,6 +14,7 @@
     config = {
       modifier = "Mod4";
       terminal = "foot";
+      defaultWorkspace = "1";
       keybindings = let
           modifier = config.modifier;
           ws1 = "y";

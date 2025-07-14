@@ -5,7 +5,6 @@
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font:size=7";
         dpi-aware = "yes";
       };
       colors = {

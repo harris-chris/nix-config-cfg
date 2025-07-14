@@ -1,13 +1,6 @@
 { config, lib, pkgs, ... }:
 
 let
-  customFonts = pkgs.nerdfonts.override {
-    fonts = [
-      "JetBrainsMono"
-      "Iosevka"
-    ];
-  };
-  myfonts = pkgs.callPackage fonts/default.nix { inherit pkgs; };
   udevRules = pkgs.callPackage ./udev/default.nix { inherit pkgs; };
 
 in {
@@ -36,6 +29,7 @@ in {
     172.16.20.17 atlas
     172.16.20.21 nixbuildserver
     172.16.20.25 hades
+    100.64.64.49 hades-ts
     172.16.20.58 git.lan.raptortt.com
     172.16.20.58 hg.lan.raptortt.com
     172.16.20.59 buildserver
@@ -51,15 +45,17 @@ in {
     tailscale.enable = true;
     tlp.enable = true;
     udev.packages = [ pkgs.via ];
+    pulseaudio.enable = true;
   };
 
-  xdg.portal.wlr.enable = true;
+  # xdg.portal.wlr.enable = true;
+  xdg.portal.config.common.default = "*";
 
   nix.nixPath = [
-    "nixos-config=/cfg/configuration.nix"
-    "nixpkgs=https://github.com/NixOS/nixpkgs/archive/23.11.tar.gz"
+    "nixos-config=/cfg/system/configuration.nix"
+    "nixpkgs=channel:nixos-unstable"
   ];
-  nix.package = pkgs.nixUnstable;
+  nix.package = pkgs.nixVersions.latest;
   nix.settings = {
     trusted-users = [ "root" "chris" ];
     system-features = [ "raptor" "big-parallel" ];
@@ -85,43 +81,35 @@ in {
   }] ;
   nix.distributedBuilds = true;
 
-  sound.enable = true;
   hardware = {
     bluetooth.enable = true;
     keyboard.qmk.enable = true;
-    opengl = {
+    graphics = {
       enable = true;
-      extraPackages = [ pkgs.vaapiIntel ];
+      package = pkgs.mesa;
+      extraPackages = with pkgs; [ libva-vdpau-driver mesa libGL egl-wayland ];
     };
-    pulseaudio.enable = true;
   };
 
   fonts.packages = with pkgs; [
-    customFonts
     dejavu_fonts
     font-awesome
-    myfonts.icomoon-feather
     ipafont
-    kochi-substitute
+    nerd-fonts.victor-mono
+    nerd-fonts.iosevka  
   ];
 
   fonts.fontconfig.defaultFonts = {
     monospace = [
-      "JetBrainsMono"
-      "IPAGothic"
+      "VictorMono"
     ];
     sansSerif = [
       "Ioveska"
-      "IPAPGothic"
     ];
     serif = [
       "DejaVu Serif"
-      "IPAPMincho"
     ];
   };
-
-  # i18n.inputMethod.enabled = "fcitx";
-  # i18n.inputMethod.fcitx.engines = with pkgs.fcitx-engines; [ mozc ];
 
   virtualisation.docker.enable = true;
 
@@ -159,7 +147,7 @@ in {
     users = {
       chris = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "docker" "plugdev" "netdev" "networkmanager" "wireshark" ];
+        extraGroups = [ "wheel" "docker" "plugdev" "netdev" "networkmanager" "wireshark" "video" ];
         shell = pkgs.fish;
       };
     };
