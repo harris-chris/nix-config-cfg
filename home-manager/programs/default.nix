@@ -2,6 +2,7 @@
    ./alacritty
    ./broot
    ./chromium
+   ./claude-code
    ./fish
    ./foot
    ./git

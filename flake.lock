@@ -1,42 +1,65 @@
 {
   "nodes": {
-    "get-workspace-name": {
+    "claude-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1689641553,
-        "narHash": "sha256-kAesDUOE4RzqLulMUN91o9tq4B5FrDscAKai+C+gK6c=",
-        "owner": "harris-chris",
-        "repo": "get-workspace-name",
-        "rev": "793b27a76344a90f4baaa7bc355993a616f9c8aa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "harris-chris",
-        "repo": "get-workspace-name",
-        "type": "github"
-      }
-    },
-    "get_workspace_name": {
-      "inputs": {
+        "flake-utils": "flake-utils",
+        "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1689641553,
-        "narHash": "sha256-kAesDUOE4RzqLulMUN91o9tq4B5FrDscAKai+C+gK6c=",
+        "lastModified": 1753169314,
+        "narHash": "sha256-vb8XYShmWSmdVH9TwMM+6+UEJwGOa5oyKJ9/Fiy8lfs=",
         "owner": "harris-chris",
-        "repo": "get-workspace-name",
-        "rev": "793b27a76344a90f4baaa7bc355993a616f9c8aa",
+        "repo": "claude-nix",
+        "rev": "bc48cca6350f419ea292845061f25cb2af93aba4",
         "type": "github"
       },
       "original": {
         "owner": "harris-chris",
-        "repo": "get-workspace-name",
+        "repo": "claude-nix",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
         "type": "github"
       }
     },
     "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "claude-nix",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1745987135,
+        "narHash": "sha256-8Up4QPuMZEJBU0eefAY+nUe7DYKQQzvaHnMpNdwRgKA=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "d2b3e6c83d457aa0e7f9344c61c3fed32bad0f7e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "home-manager_2": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -54,25 +77,6 @@
         "owner": "nix-community",
         "ref": "release-25.05",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "kakoune_workspace": {
-      "inputs": {
-        "get-workspace-name": "get-workspace-name",
-        "nixpkgs": "nixpkgs_3"
-      },
-      "locked": {
-        "lastModified": 1689641933,
-        "narHash": "sha256-Q45ygf5TN/KcimzP8JrsuofUP8YTBT6XjtOTECMuA60=",
-        "owner": "harris-chris",
-        "repo": "kakoune-workspace",
-        "rev": "0bc2a8dd9f343dc807bd3a53a3e0275e006ffed2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "harris-chris",
-        "repo": "kakoune-workspace",
         "type": "github"
       }
     },
@@ -94,43 +98,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1659446231,
-        "narHash": "sha256-hekabNdTdgR/iLsgce5TGWmfIDZ86qjPhxDg/8TlzhE=",
+        "lastModified": 1745930157,
+        "narHash": "sha256-y3h3NLnzRSiUkYpnfvnS669zWZLoqqI6NprtLQ+5dck=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "eabc38219184cc3e04a974fe31857d8e0eac098d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-21.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1659446231,
-        "narHash": "sha256-hekabNdTdgR/iLsgce5TGWmfIDZ86qjPhxDg/8TlzhE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "eabc38219184cc3e04a974fe31857d8e0eac098d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-21.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1689444953,
-        "narHash": "sha256-0o56bfb2LC38wrinPdCGLDScd77LVcr7CrH1zK7qvDg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "8acef304efe70152463a6399f73e636bcc363813",
+        "rev": "46e634be05ce9dc6d4db8e664515ba10b78151ae",
         "type": "github"
       },
       "original": {
@@ -140,7 +112,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1751943650,
         "narHash": "sha256-7orTnNqkGGru8Je6Un6mq1T8YVVU/O5kyW4+f9C1mZQ=",
@@ -156,48 +128,27 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
-      "locked": {
-        "lastModified": 1686592866,
-        "narHash": "sha256-riGg89eWhXJcPNrQGcSwTEEm7CGxWC06oSX44hajeMw=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0eeebd64de89e4163f4d3cf34ffe925a5cf67a05",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "personal_pkgs": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_5"
-      },
-      "locked": {
-        "lastModified": 1689644155,
-        "narHash": "sha256-iWhSblRbMSl6Im/Z0iNvW2CO8Y3HYnWGAlLdPj72xZE=",
-        "owner": "harris-chris",
-        "repo": "personal-packages",
-        "rev": "e3170bdd242c7c385a688666c92004dbbcd9ed0e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "harris-chris",
-        "repo": "personal-packages",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
-        "get_workspace_name": "get_workspace_name",
-        "home-manager": "home-manager",
-        "kakoune_workspace": "kakoune_workspace",
+        "claude-nix": "claude-nix",
+        "home-manager": "home-manager_2",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_4",
-        "personal_pkgs": "personal_pkgs"
+        "nixpkgs": "nixpkgs_2"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
       }
     }
   },

@@ -8,6 +8,7 @@ let
     awscli2
     bemenu
     bolt
+    claude-code
     docker
     diff-so-fancy
     eza
@@ -16,7 +17,6 @@ let
     gdu
     git-crypt
     jq
-    kakoune-workspace
     libnotify
     lsof
     ncpamixer
