@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(home-manager switch:*)",
+      "Bash(claude --version)",
+      "Bash(/nix/store/6ciad2iipybbmgf4h6dajms5qh1riaf0-home-manager-generation/activate:*)",
+      "Bash(/nix/store/jdkfic484vh0j8yfhcz8yr9cpk7gpwwn-home-manager-generation/activate)",
+      "Bash(grep:*)",
+      "Bash(HOME_MANAGER_BACKUP_EXT=\"pre-claude-nix-$(date +%Y%m%d%H%M%S)\" /nix/store/jdkfic484vh0j8yfhcz8yr9cpk7gpwwn-home-manager-generation/activate)",
+      "Bash(cat:*)"
+    ],
+    "deny": []
+  }
+}

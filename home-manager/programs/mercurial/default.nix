@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 
 let
-  raptor_ldap_password = pkgs.readSecret "dummy_password" ./raptor_ldap_password.secret;
+  readSecret = import ../../../lib/readSecret.nix { inherit pkgs; };
+  raptor_ldap_password = readSecret "dummy_password" ./raptor_ldap_password.secret;
 in
 {
   programs.mercurial = {

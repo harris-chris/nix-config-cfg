@@ -8,7 +8,7 @@ let
     awscli2
     bemenu
     bolt
-    claude-code
+    bun
     docker
     diff-so-fancy
     eza
@@ -48,6 +48,8 @@ let
 in {
   inherit imports;
   programs.home-manager.enable = true;
+  
+  home.enableNixpkgsReleaseCheck = false;
 
   nixpkgs.config = {
     allowUnfree = true;
