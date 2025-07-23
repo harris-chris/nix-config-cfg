@@ -45,7 +45,7 @@ in {
     tailscale.enable = true;
     tlp.enable = true;
     udev.packages = [ pkgs.via ];
-    pulseaudio.enable = true;
+    pulseaudio.enable = false;
   };
 
   # xdg.portal.wlr.enable = true;

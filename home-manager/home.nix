@@ -6,7 +6,6 @@ let
     atop
     any-nix-shell
     awscli2
-    bemenu
     bolt
     bun
     docker

@@ -1,6 +1,7 @@
 [
    ./alacritty
    ./bash
+   ./bemenu
    ./broot
    ./chromium
    ./claude-code
