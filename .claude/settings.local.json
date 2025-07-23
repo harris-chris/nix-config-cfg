@@ -7,7 +7,13 @@
       "Bash(/nix/store/jdkfic484vh0j8yfhcz8yr9cpk7gpwwn-home-manager-generation/activate)",
       "Bash(grep:*)",
       "Bash(HOME_MANAGER_BACKUP_EXT=\"pre-claude-nix-$(date +%Y%m%d%H%M%S)\" /nix/store/jdkfic484vh0j8yfhcz8yr9cpk7gpwwn-home-manager-generation/activate)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(echo $PS1)",
+      "Bash(echo:*)",
+      "Bash(mkdir:*)",
+      "Bash(HOME_MANAGER_BACKUP_EXT:*)",
+      "Bash(swaymsg:*)",
+      "Bash(bash:*)"
     ],
     "deny": []
   }
