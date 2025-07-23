@@ -14,7 +14,8 @@
       "Bash(HOME_MANAGER_BACKUP_EXT:*)",
       "Bash(swaymsg:*)",
       "Bash(bash:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }

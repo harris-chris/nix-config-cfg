@@ -25,7 +25,7 @@ let
   ];
 
   importedPrograms = import ./server-programs;
-  importedServices = import ./services;
+  importedServices = import ./server-services;
   imports = importedPrograms ++ importedServices;
 
 in {
