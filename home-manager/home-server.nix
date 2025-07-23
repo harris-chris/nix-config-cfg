@@ -67,6 +67,21 @@ in {
       settings.sort_key = "PERCENT_MEM";
     };
 
-    ssh.enable = true;
+    ssh = {
+      enable = true;
+      matchBlocks = {
+        "git.lan.raptortt.com" = {
+          port = 222;
+          user = "charris";
+          identityFile = "~/.ssh/raptor_git";
+        };
+        "github-raptor" = {
+          user = "git";
+          hostname = "github.com";
+          identityFile = "~/.ssh/raptor_github";
+          identitiesOnly = true;
+        };
+      };
+    };
   };
 }
