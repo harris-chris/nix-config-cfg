@@ -1,5 +1,4 @@
 [
-   ./alacritty
    ./bash
    ./bemenu
    ./broot
