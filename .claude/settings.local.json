@@ -15,7 +15,11 @@
       "Bash(swaymsg:*)",
       "Bash(bash:*)",
       "Bash(find:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(nix-prefetch-github:*)",
+      "Bash(nix hash to-sri:*)",
+      "Bash(nix-build:*)",
+      "Bash(ls:*)"
     ],
     "deny": []
   }
