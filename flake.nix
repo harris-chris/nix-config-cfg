@@ -35,6 +35,19 @@
           claude-nix.homeManagerModules.claude-code
         ];
       };
+      chris-server = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            (import ./lib/default.nix).overlay
+          ];
+          config.allowUnfree = true;
+        };
+        modules = [
+          ./home-manager/home-server.nix
+          claude-nix.homeManagerModules.claude-code
+        ];
+      };
     };
   in
     {

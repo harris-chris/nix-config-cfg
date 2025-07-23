@@ -40,7 +40,12 @@ in {
   services = {
     blueman.enable = true;
     dbus.enable = true;
-    pipewire.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
     power-profiles-daemon.enable = false;
     tailscale.enable = true;
     tlp.enable = true;
@@ -80,6 +85,9 @@ in {
     mandatoryFeatures = [ "raptor" ];
   }] ;
   nix.distributedBuilds = true;
+
+  # Enable RTKit for real-time audio scheduling
+  security.rtkit.enable = true;
 
   hardware = {
     bluetooth.enable = true;
@@ -147,7 +155,7 @@ in {
     users = {
       chris = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "docker" "plugdev" "netdev" "networkmanager" "wireshark" "video" ];
+        extraGroups = [ "wheel" "docker" "plugdev" "netdev" "networkmanager" "wireshark" "video" "audio" ];
         shell = pkgs.fish;
       };
     };
