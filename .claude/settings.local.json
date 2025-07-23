@@ -13,7 +13,8 @@
       "Bash(mkdir:*)",
       "Bash(HOME_MANAGER_BACKUP_EXT:*)",
       "Bash(swaymsg:*)",
-      "Bash(bash:*)"
+      "Bash(bash:*)",
+      "Bash(find:*)"
     ],
     "deny": []
   }
