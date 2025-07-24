@@ -19,7 +19,16 @@
       "Bash(nix-prefetch-github:*)",
       "Bash(nix hash to-sri:*)",
       "Bash(nix-build:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(./pkgs/claude-code/upgrade.sh:*)",
+      "Bash(nix-prefetch-url:*)",
+      "Bash(nix hash convert:*)",
+      "Bash(mv:*)",
+      "Bash(chmod:*)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }

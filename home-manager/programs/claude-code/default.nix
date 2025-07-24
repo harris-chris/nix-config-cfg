@@ -1,10 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
-  programs.claude-code = {
-    enable = true;
-    memory.source = ./claude.md;
-    # apiKeyFile = "/home/chris/.config/claude-apikey";
-    # …etc…
-  };
+  home.packages = [ pkgs.claude-code ];
+  
+  # Set up claude memory file
+  home.file.".claude/CLAUDE.md".source = ./claude.md;
 }

@@ -8,7 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = github:NixOS/nixos-hardware/master;
-    claude-nix.url = "github:harris-chris/claude-nix";
   };
 
   outputs = inputs @ {
@@ -16,7 +15,6 @@
     , nixpkgs
     , home-manager
     , nixos-hardware
-    , claude-nix
   }:
   let
     system = "x86_64-linux";
@@ -32,7 +30,6 @@
         };
         modules = [
           ./home-manager/home.nix
-          claude-nix.homeManagerModules.claude-code
         ];
       };
       chris-server = home-manager.lib.homeManagerConfiguration {
@@ -45,7 +42,6 @@
         };
         modules = [
           ./home-manager/home-server.nix
-          claude-nix.homeManagerModules.claude-code
         ];
       };
     };
