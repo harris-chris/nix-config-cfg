@@ -28,7 +28,10 @@
       "Bash(nix hash convert:*)",
       "Bash(mv:*)",
       "Bash(chmod:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(bluetoothctl:*)",
+      "Bash(wpctl status:*)",
+      "Bash(wpctl set-default:*)"
     ],
     "deny": []
   }

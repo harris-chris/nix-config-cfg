@@ -3,16 +3,11 @@
 let
   gitConfig = {
     core = {
-      editor = "kak";
+      editor = "hx";
       pager  = "diff-so-fancy | less --tabs=4 -RFX";
     };
     init.defaultBranch = "main";
-    merge.tool = "vimdiff";
-    mergetool = {
-      cmd    = "nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"";
-      prompt = false;
-    };
-    pull.rebase = false;
+    pull.rebase = true;
   };
 in
 {

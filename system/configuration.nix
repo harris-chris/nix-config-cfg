@@ -37,6 +37,12 @@ in {
 
   time.timeZone = "Asia/Tokyo";
 
+  # Swap configuration to prevent OOM situations
+  swapDevices = [ {
+    device = "/var/lib/swapfile";
+    size = 16*1024; # 16GB swap file
+  } ];
+
   services = {
     blueman.enable = true;
     dbus.enable = true;
@@ -51,6 +57,15 @@ in {
     tlp.enable = true;
     udev.packages = [ pkgs.via ];
     pulseaudio.enable = false;
+    
+    # Early OOM daemon to prevent system freezes
+    earlyoom = {
+      enable = true;
+      freeMemThreshold = 5;  # Kill processes when <5% memory free
+      freeSwapThreshold = 10; # Kill processes when <10% swap free
+      enableNotifications = true; # Desktop notifications when killing
+      killHook = "${pkgs.libnotify}/bin/notify-send -u critical 'earlyoom' 'Process killed due to low memory: $EARLYOOM_NAME ($EARLYOOM_PID)'";
+    };
   };
 
   # xdg.portal.wlr.enable = true;
