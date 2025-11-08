@@ -16,23 +16,7 @@ in {
   networking.networkmanager.enable = true;
   networking.wireless.userControlled.enable = true;
   networking.extraHosts = ''
-    10.21.5.20 metis
-    10.21.5.30 aether
-    172.16.20.6 hermes
-    172.16.20.7 fastbox2
-    172.16.20.8 anemoi
-    172.16.20.9 apollo
-    172.16.20.10 fastbox1
-    172.16.20.11 turbobox
-    172.16.20.13 rocketman
-    172.16.20.16 achilles
-    172.16.20.17 atlas
-    172.16.20.21 nixbuildserver
-    172.16.20.25 hades
-    100.64.64.49 hades-ts
-    172.16.20.58 git.lan.raptortt.com
-    172.16.20.58 hg.lan.raptortt.com
-    172.16.20.59 buildserver
+    2001:f70:8be0:8100::dead:beef ripper
   '';
 
   time.timeZone = "Asia/Tokyo";

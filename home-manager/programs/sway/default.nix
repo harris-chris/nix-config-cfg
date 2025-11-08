@@ -50,6 +50,9 @@
         input type:touchpad {
           tap enabled
         }
+        input 1149:32980:SlimBlade_Pro {
+          scroll_factor 2.0
+        }
     '';
   };
   services.swayidle = {
