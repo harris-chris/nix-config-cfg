@@ -85,6 +85,7 @@ in {
 
     ssh = {
       enable = true;
+      addKeysToAgent = "yes";
       matchBlocks = {
         "ripper" = {
           user = "chris";
