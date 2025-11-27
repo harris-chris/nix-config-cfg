@@ -22,6 +22,7 @@ let
     tree
     usbutils
     which
+    zellij
   ];
 
   importedPrograms = import ./server-programs;

@@ -82,8 +82,8 @@ update_package_nix() {
     # Update version
     sed -i "s/version = \"[^\"]*\";/version = \"$version\";/" "$PACKAGE_NIX"
     
-    # Update source hash
-    sed -i "s/hash = \"[^\"]*\";/hash = \"$source_hash\";/" "$PACKAGE_NIX"
+    # Update source hash (using | as delimiter since hash might contain /)
+    sed -i "s|hash = \"[^\"]*\";|hash = \"$source_hash\";|" "$PACKAGE_NIX"
     
     # Set npmDepsHash to fakeHash temporarily
     sed -i "s/npmDepsHash = \"[^\"]*\";/npmDepsHash = lib.fakeHash;/" "$PACKAGE_NIX"
