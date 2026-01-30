@@ -2,6 +2,6 @@
 
 {
   services.ssh-agent = {
-    enable = true;
+    enable = false;  # Using keychain instead
   };
 }

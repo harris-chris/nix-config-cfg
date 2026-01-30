@@ -31,7 +31,10 @@
       "Bash(rm:*)",
       "Bash(bluetoothctl:*)",
       "Bash(wpctl status:*)",
-      "Bash(wpctl set-default:*)"
+      "Bash(wpctl set-default:*)",
+      "WebSearch",
+      "Bash(pstree:*)",
+      "Bash(ps:*)"
     ],
     "deny": []
   }

@@ -3,12 +3,12 @@
    ./bemenu
    ./broot
    ./chromium
-   ./claude-code
    ./fish
    ./foot
    ./git
    ./helix
    ./mercurial
+   ./nyxt
    ./pass
    ./qutebrowser
    ./sway

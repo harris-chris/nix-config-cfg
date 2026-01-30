@@ -91,7 +91,17 @@ in {
           user = "chris";
           forwardAgent = true;
         };
+        "100.115.48.39" = {
+          user = "chris";
+          forwardAgent = true;
+        };
       };
+    };
+
+    keychain = {
+      enable = true;
+      keys = [ "id_ed25519" ];
+      enableFishIntegration = true;
     };
   };
 }

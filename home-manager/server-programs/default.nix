@@ -1,7 +1,6 @@
 [
    ../programs/bash
    ../programs/broot
-   ../programs/claude-code
    ../programs/fish
    ../programs/git
    ../programs/helix
