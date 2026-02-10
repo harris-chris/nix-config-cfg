@@ -65,6 +65,7 @@ in {
 
     sessionVariables = {
       EDITOR = "hx";
+      SUDO_EDITOR = "hx";
     };
     keyboard = null;
   };
