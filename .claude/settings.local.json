@@ -34,7 +34,13 @@
       "Bash(wpctl set-default:*)",
       "WebSearch",
       "Bash(pstree:*)",
-      "Bash(ps:*)"
+      "Bash(ps:*)",
+      "Bash(nix eval:*)",
+      "Bash(nix-instantiate:*)",
+      "Bash(nix flake metadata:*)",
+      "Bash(python3:*)",
+      "Bash(nix flake archive:*)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ],
     "deny": []
   }

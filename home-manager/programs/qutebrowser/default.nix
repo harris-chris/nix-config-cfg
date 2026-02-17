@@ -38,6 +38,12 @@
       kp-ouch-set-risk-filter = "https://redmine.lan.raptortt.com/issues/6031";
       fix_5_sp2 = "https://www.onixs.biz/fix-dictionary/5.0.sp2/index.html";
     };
+    settings = {
+      content.blocking = {
+        enabled = true;
+        method = "both";
+      };
+    };
     searchEngines = {
       DEFAULT = "https://www.google.com/search?hl=en&q={}";
       nixsearch = "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&query={}";
