@@ -101,9 +101,10 @@ in {
   fonts.packages = with pkgs; [
     dejavu_fonts
     font-awesome
+    inter
     ipafont
     nerd-fonts.victor-mono
-    nerd-fonts.iosevka  
+    nerd-fonts.iosevka
   ];
 
   fonts.fontconfig.defaultFonts = {

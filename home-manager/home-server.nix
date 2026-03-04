@@ -9,6 +9,7 @@ let
     eza
     fd
     gdu
+    gh
     git-crypt
     jq
     lsof

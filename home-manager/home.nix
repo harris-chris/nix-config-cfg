@@ -14,6 +14,7 @@ let
     fd
     firefox
     gdu
+    gh
     git-crypt
     jq
     libnotify
