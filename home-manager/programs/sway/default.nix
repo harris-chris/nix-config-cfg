@@ -42,6 +42,14 @@
           "${modifier}+Shift+${ws6}" = "move container to workspace number 6";
         };
 
+        colors.focused = {
+          border = "#ff69b4";
+          background = "#285577";
+          text = "#ffffff";
+          indicator = "#ff69b4";
+          childBorder = "#ff69b4";
+        };
+
         bars = [
           (import ./swaybar.nix { inherit pkgs; })
         ];

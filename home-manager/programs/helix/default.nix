@@ -1,6 +1,13 @@
 { config, pkgs, lib, ... }:
 
 let
+  clipboard-copy = pkgs.writeShellScript "clipboard-copy" ''
+    if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+      ${pkgs.wl-clipboard}/bin/wl-copy "$@"
+    else
+      ${pkgs.xclip}/bin/xclip -selection clipboard "$@"
+    fi
+  '';
 in
 {
   home = rec {
@@ -37,7 +44,7 @@ in
         space.j = "jump_view_down";
         space.k = "jump_view_up";
         space.l = "jump_view_right";
-        space.m = ":sh echo -n %{buffer_name} | wl-copy";  # Copy absolute path to clipboard
+        space.m = ":sh echo -n %{buffer_name} | ${clipboard-copy}";  # Copy absolute path to clipboard
       };
     };
     enable = true;

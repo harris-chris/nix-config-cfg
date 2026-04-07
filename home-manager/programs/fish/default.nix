@@ -63,6 +63,7 @@ in
       ".." = "cd ..";
       ping = "prettyping";
       "v"  = "nvr";
+      "clco" = "NIXPKGS_ALLOW_UNFREE=1 nix shell nixpkgs#claude-code --impure -c 'claude'";
     };
     functions = {
       grepl = {

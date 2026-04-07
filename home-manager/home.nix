@@ -7,6 +7,7 @@ let
     any-nix-shell
     awscli2
     bolt
+    btop
     bun
     docker
     diff-so-fancy
