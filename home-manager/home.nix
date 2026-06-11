@@ -94,7 +94,8 @@ in {
           user = "chris";
           forwardAgent = true;
         };
-        "100.115.48.39" = {
+        "ripper-ts" = {
+          hostname = "ripper.tail9c8d2e.ts.net";
           user = "chris";
           forwardAgent = true;
         };
