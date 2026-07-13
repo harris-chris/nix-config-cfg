@@ -9,7 +9,9 @@ let
     bolt
     btop
     bun
+    dfu-programmer
     docker
+    dos2unix
     diff-so-fancy
     eza
     fd
@@ -28,6 +30,7 @@ let
     pass
     p7zip
     prettyping
+    qmk
     ripgrep
     signal-desktop
     sioyek
