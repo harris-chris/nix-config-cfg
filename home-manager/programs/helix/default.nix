@@ -2,10 +2,13 @@
 
 let
   clipboard-copy = pkgs.writeShellScript "clipboard-copy" ''
-    if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    if [ -n "$WAYLAND_DISPLAY" ]; then
       ${pkgs.wl-clipboard}/bin/wl-copy "$@"
-    else
+    elif [ -n "$DISPLAY" ]; then
       ${pkgs.xclip}/bin/xclip -selection clipboard "$@"
+    else
+      # No display (e.g. over SSH): hand stdin to the terminal itself via OSC 52.
+      printf '\033]52;c;%s\a' "$(${pkgs.coreutils}/bin/base64 -w0)" > /dev/tty
     fi
   '';
 in
