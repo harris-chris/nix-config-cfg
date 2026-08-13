@@ -39,6 +39,10 @@ in {
     power-profiles-daemon.enable = false;
     tailscale.enable = true;
     tlp.enable = true;
+    # UDisks2 backend for the udiskie user service (home-manager). Without it
+    # udiskie can't reach org.freedesktop.UDisks2 over D-Bus and exits on start.
+    # Also enables removable-media auto-mount (e.g. the RP2040 RPI-RP2 drive).
+    udisks2.enable = true;
     udev.packages = [ pkgs.via ];
     pulseaudio.enable = false;
     

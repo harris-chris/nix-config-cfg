@@ -22,6 +22,7 @@ let
     jq
     libnotify
     lsof
+    mosh
     ncpamixer
     nix-index
     nix-prefetch-scripts
